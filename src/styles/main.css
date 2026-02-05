@@ -727,6 +727,7 @@
             .buttons-component.style-2 > li > a > svg {
                 display: block;
                 fill: #AF9156;
+                color: #AF9156;
                 flex-grow: 0;
                 flex-shrink: 0;
                 height: 100%;
@@ -792,17 +793,16 @@
             }
 
             .buttons-component.style-1 > li > a > svg {
-                display: block;
-                fill: #362985;
+                stroke: #362985; /* couleur de la flèche */
+                fill: none;      /* on s’assure que rien ne remplit l’intérieur */
+                color: #362985;
                 flex-grow: 0;
                 flex-shrink: 0;
                 height: 100%;
-                min-width: 16px;
-                pointer-events: none;
                 width: 1.5em;
+                pointer-events: none;
                 margin-left: 1rem;
-                margin-right: calc(-0.125em + 0rem);
-                transition: fill 0.25s ease;
+                transition: stroke 0.25s ease;
             }
 
             .buttons-component.style-1 > li > a > .label {
