@@ -13,18 +13,38 @@
   <body class="is-loading">
     <!-- Modal: Request an introduction -->
     <div id="intro-modal" class="modal-overlay">
-    <div class="modal">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
 
-        <h2 class="modal-title">Introduction to PraxisCore</h2>
-        <p class="modal-text">
-        PraxisCore provides senior-led operational expertise to help investors, hospitals and governments
-        understand whether a healthcare platform can scale — and how to make it happen.
-        <br><br>
-        An introduction allows us to understand your context and determine whether our operators can bring
-        meaningful value to your mission.
-        </p>
+            <h2 class="modal-title">Introduction to PraxisCore</h2>
+            <p class="modal-text">
+            PraxisCore provides senior-led operational expertise to help investors, hospitals and governments
+            understand whether a healthcare platform can scale — and how to make it happen.
+            <br><br>
+            An introduction allows us to understand your context and determine whether our operators can bring
+            meaningful value to your mission.
+            </p>
+        </div>
     </div>
+    <!-- Modal: Our Services -->
+    <div id="services-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Our Services</h2>
+
+            <p class="modal-text">
+            PraxisCore supports healthcare platforms from strategy to operational execution — led by senior operators.
+            </p>
+
+            <ul class="modal-list">
+            <li>Governance & operating model</li>
+            <li>Throughput engineering & staffing logic</li>
+            <li>Design, commissioning & vendor strategy</li>
+            <li>Blueprint & implementation planning</li>
+            <li>Execution support & KPI cadence</li>
+            </ul>
+        </div>
     </div>
     <svg style="display:none" aria-hidden="true" focusable="false">
 
@@ -96,7 +116,7 @@
                         <p id="text04" class="text-component instance-4 style-6">We design and govern scalable healthcare platforms — combining clinical governance, operational engineering and investor-grade structuring.</p>
                         <ul id="buttons10" class="buttons-component instance-10 style-2">
                             <li>
-                                <a href="#" class="n01" role="button">
+                                <a href="#" onclick="openServicesModal(event);" class="n01" role="button">
                                     <svg aria-hidden="true" width="24" height="24">
                                         <use xlink:href="#icon-arrow-right"></use>
                                     </svg>

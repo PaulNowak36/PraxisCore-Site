@@ -2468,3 +2468,18 @@
 .modal-close:hover {
     opacity: 0.6;
 }
+
+/* Modal list */
+.modal-list {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    color: rgba(184,186,209,0.85);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.modal-list li {
+    margin-bottom: 0.5rem;
+    list-style: disc;
+}
