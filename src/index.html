@@ -11,8 +11,33 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body class="is-loading">
-    <div id="loader"></div>
-    
+    <svg style="display:none" aria-hidden="true" focusable="false">
+
+    <!-- DOWN ARROW -->
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+    <path
+        d="M12 5v14M6 13l6 6 6-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+    </symbol>
+
+    <!-- RIGHT ARROW -->
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path
+        d="M5 12h14M13 6l6 6-6 6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        />
+    </symbol>
+
+    </svg>
 
     <div class="site-wrapper">
       <main class="site-main">
@@ -36,7 +61,11 @@
                     <ul id="buttons03" class="buttons-component instance-3 style-1">
                         <li>
                             <a onclick="_nextScrollPoint(event);" class="n01" role="button">
+                                <svg aria-hidden="true" width="24" height="24">
+                                    <use xlink:href="#icon-arrow-down"></use>
+                                </svg>
                                 <span class="label">Request an introduction</span>
+                                
                             </a>
                         </li>
                     </ul>
@@ -53,9 +82,8 @@
                         <ul id="buttons10" class="buttons-component instance-10 style-2">
                             <li>
                                 <a href="#" class="n01" role="button">
-                                    <svg aria-labelledby="buttons10-icon-1-title">
-                                        <title id="buttons10-icon-1-title">Arrow Right (Light)</title>
-                                        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                    <svg aria-hidden="true" width="24" height="24">
+                                        <use xlink:href="#icon-arrow-right"></use>
                                     </svg>
                                     <span class="label">Our services</span>
                                 </a>
@@ -69,9 +97,8 @@
                         <ul id="buttons02" class="buttons-component instance-2 style-2">
                             <li>
                                 <a href="#" class="n01" role="button">
-                                    <svg aria-labelledby="buttons02-icon-1-title">
-                                        <title id="buttons02-icon-1-title">Arrow Right (Light)</title>
-                                        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                    <svg aria-hidden="true" width="24" height="24">
+                                        <use xlink:href="#icon-arrow-right"></use>
                                     </svg>
                                     <span class="label">Contact</span>
                                 </a>
@@ -150,9 +177,8 @@
                         <ul id="buttons07" class="buttons-component instance-7 style-2">
                             <li>
                                 <a href="#" class="n01" role="button">
-                                    <svg aria-labelledby="buttons07-icon-1-title">
-                                        <title id="buttons07-icon-1-title">Arrow Right (Light)</title>
-                                        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                    <svg aria-hidden="true" width="24" height="24">
+                                        <use xlink:href="#icon-arrow-right"></use>
                                     </svg>
                                     <span class="label">Request references</span>
                                 </a>
@@ -207,9 +233,8 @@
                     <ul id="buttons01" class="buttons-component instance-1 style-1">
                         <li>
                             <a href="#" class="n01" role="button">
-                                <svg aria-labelledby="buttons01-icon-1-title">
-                                    <title id="buttons01-icon-1-title">Arrow Right (Light)</title>
-                                    <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                <svg aria-hidden="true" width="24" height="24">
+                                    <use xlink:href="#icon-arrow-right"></use>
                                 </svg>
                                 <span class="label">Request a call</span>
                             </a>
