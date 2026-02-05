@@ -11,6 +11,21 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body class="is-loading">
+    <!-- Modal: Request an introduction -->
+    <div id="intro-modal" class="modal-overlay">
+    <div class="modal">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+
+        <h2 class="modal-title">Introduction to PraxisCore</h2>
+        <p class="modal-text">
+        PraxisCore provides senior-led operational expertise to help investors, hospitals and governments
+        understand whether a healthcare platform can scale — and how to make it happen.
+        <br><br>
+        An introduction allows us to understand your context and determine whether our operators can bring
+        meaningful value to your mission.
+        </p>
+    </div>
+    </div>
     <svg style="display:none" aria-hidden="true" focusable="false">
 
     <!-- DOWN ARROW -->
@@ -60,7 +75,7 @@
 
                     <ul id="buttons03" class="buttons-component instance-3 style-1">
                         <li>
-                            <a href="#" onclick="_nextScrollPoint(event);" class="n01" role="button">
+                            <a href="#" onclick="openIntroModal(event);" class="n01" role="button">
                                 <svg aria-hidden="true" width="24" height="24">
                                     <use xlink:href="#icon-arrow-down"></use>
                                 </svg>
