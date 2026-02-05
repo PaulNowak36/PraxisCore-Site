@@ -314,7 +314,7 @@
             }
 
             body.is-loading {
-                pointer-events: none;
+                pointer-events: auto;
             }
 
             body.is-playing.with-loader #loader {
