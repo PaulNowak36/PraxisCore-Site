@@ -91,6 +91,98 @@
             </a>
         </div>
     </div>
+    <!-- Modal: Request a Call -->
+    <div id="call-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Request a Call</h2>
+
+            <p class="modal-text">
+            Choose how you would like to connect with a senior operator.
+            </p>
+
+            <div class="modal-call-options">
+
+                <a class="modal-call-btn" href="tel:+33686920417">
+                    Call us now
+                </a>
+
+                <a class="modal-call-btn" href="https://wa.me/33686920417" target="_blank">
+                    WhatsApp call
+                </a>
+
+                <a class="modal-call-btn" href="https://signal.me/#p/+333686920417" target="_blank">
+                    Signal call
+                </a>
+
+                <div class="modal-call-row">
+                    <button class="modal-call-small modal-call-schedule" onclick="openScheduleCallModal()">
+                        Schedule a call
+                    </button>
+
+                    <button class="modal-call-small modal-call-callback" onclick="openCallbackModal()">
+                        Request a callback
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Schedule a Call -->
+    <div id="schedule-call-modal" class="modal-overlay">
+        <div class="modal modal-alt">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Schedule a Call</h2>
+
+            <p class="modal-text">
+            Choose a time that works for you. Calls are led by senior operators and last 20–30 minutes.
+            </p>
+
+            <a class="modal-schedule-btn" href="https://calendly.com/your-link" target="_blank">
+            Open scheduling page
+            </a>
+
+            <p class="modal-note">
+            You will be redirected to our scheduling platform (Calendly / Cal.com).
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal: Request a Callback -->
+    <div id="callback-modal" class="modal-overlay">
+        <div class="modal modal-alt2">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Request a Callback</h2>
+
+            <p class="modal-text">
+            Leave your number and we will call you back within 24 hours.
+            </p>
+
+            <form id="callback-form" action="https://formspree.io/f/maqdwzpq" method="POST">
+
+                <!-- Hidden default message -->
+                <input type="hidden" name="context" value="A user wants to contact you from the PraxisCore website.">
+
+                <label class="modal-label">Phone number *</label>
+                <input type="text" name="phone" required class="modal-input">
+
+                <label class="modal-label">Preferred time (optional)</label>
+                <input type="text" name="time" class="modal-input">
+
+                <button type="submit" class="modal-submit">Request callback</button>
+            </form>
+
+            <p id="callback-success" class="modal-success">
+            Your callback request has been sent.
+            </p>
+        </div>
+    </div>
+
+    {{/*  ARROWS SYMBOLS  */}}
     <svg style="display:none" aria-hidden="true" focusable="false">
 
     <!-- DOWN ARROW -->
@@ -312,7 +404,7 @@
                     <p id="text25" class="text-component instance-25 style-2">Tell us the context — we reply with a clear scope and next steps.</p>
                     <ul id="buttons01" class="buttons-component instance-1 style-1">
                         <li>
-                            <a href="#" class="n01" role="button">
+                            <a href="#" onclick="openCallModal(event);" class="n01" role="button">
                                 <svg aria-hidden="true" width="24" height="24">
                                     <use xlink:href="#icon-arrow-right"></use>
                                 </svg>

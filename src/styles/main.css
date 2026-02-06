@@ -2554,3 +2554,114 @@
 .modal-download:hover {
     opacity: 0.85;
 }
+
+/* Row for the two small buttons */
+.modal-call-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Base style for the two small buttons */
+.modal-call-small {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+/* Style variant: Schedule a call */
+.modal-call-schedule {
+    background: #F2E2C3;
+    color: #0F0F0F;
+    font-weight: 600;
+}
+
+.modal-call-schedule:hover {
+    opacity: 0.85;
+}
+
+/* Style variant: Request a callback */
+.modal-call-callback {
+    background: #1A1A1A;
+    color: #F2E2C3;
+}
+
+.modal-call-callback:hover {
+    background: #2A2A2A;
+}
+
+
+/* MODAL POUR L'APPEL */
+
+.modal-call-options {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.modal-call-btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    background: #1A1A1A;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0.5rem;
+    color: #F2E2C3;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-call-btn:hover {
+    background: #2A2A2A;
+    opacity: 0.9;
+}
+
+/*SCHEDULE A CALL*/
+
+.modal-alt {
+    background: #141414;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.modal-schedule-btn {
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #F2E2C3;
+    color: #0F0F0F;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.modal-schedule-btn:hover {
+    opacity: 0.85;
+}
+
+.modal-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: rgba(184,186,209,0.6);
+    font-family: 'Inter', sans-serif;
+}
+
+/*Request a Callback*/
+
+.modal-alt2 {
+    background: #0E0E0E;
+    border-left: 3px solid #F2E2C3;
+    padding-left: 2.8rem;
+}

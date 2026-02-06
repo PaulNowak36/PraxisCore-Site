@@ -24,6 +24,22 @@ function openReferencesModal(event) {
     modal.classList.add("active");
 }
 
+function openCallModal(event) {
+    event.preventDefault();
+    const modal = document.getElementById("call-modal");
+    modal.classList.add("active");
+}
+
+function openScheduleCallModal() {
+    const modal = document.getElementById("schedule-call-modal");
+    modal.classList.add("active");
+}
+
+function openCallbackModal() {
+    const modal = document.getElementById("callback-modal");
+    modal.classList.add("active");
+}
+
 // FERMETURE DES MODALS
 
 function closeAllModals() {
@@ -77,6 +93,31 @@ if (contactForm) {
         if (response.ok) {
             contactForm.reset();
             contactSuccess.style.display = "block";
+        }
+    });
+}
+
+// GESTION DE L'APPEL DE RETOUR
+
+const callbackForm = document.getElementById("callback-form");
+const callbackSuccess = document.getElementById("callback-success");
+
+if (callbackForm) {
+    callbackForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(callbackForm);
+        const action = callbackForm.getAttribute("action");
+
+        const response = await fetch(action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            callbackForm.reset();
+            callbackSuccess.style.display = "block";
         }
     });
 }
