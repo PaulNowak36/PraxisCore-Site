@@ -18,6 +18,12 @@ function openContactModal(event) {
     modal.classList.add("active");
 }
 
+function openReferencesModal(event) {
+    event.preventDefault();
+    const modal = document.getElementById("references-modal");
+    modal.classList.add("active");
+}
+
 // FERMETURE DES MODALS
 
 function closeAllModals() {
