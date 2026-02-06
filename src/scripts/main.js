@@ -1,3 +1,5 @@
+// OUVERTURE DES MODALS
+
 function openIntroModal(event) {
     event.preventDefault();
     const modal = document.getElementById("intro-modal");
@@ -9,6 +11,14 @@ function openServicesModal(event) {
     const modal = document.getElementById("services-modal");
     modal.classList.add("active");
 }
+
+function openContactModal(event) {
+    event.preventDefault();
+    const modal = document.getElementById("contact-modal");
+    modal.classList.add("active");
+}
+
+// FERMETURE DES MODALS
 
 function closeAllModals() {
     const overlays = document.querySelectorAll(".modal-overlay.active");
@@ -38,3 +48,29 @@ document.addEventListener("keydown", (e) => {
         closeAllModals();
     }
 });
+
+
+// GESTION DU FORMULAIRE
+
+const contactForm = document.getElementById("contact-form");
+const contactSuccess = document.getElementById("contact-success");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const action = contactForm.getAttribute("action");
+
+        const response = await fetch(action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            contactForm.reset();
+            contactSuccess.style.display = "block";
+        }
+    });
+}

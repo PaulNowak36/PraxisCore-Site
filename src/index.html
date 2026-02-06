@@ -46,6 +46,30 @@
             </ul>
         </div>
     </div>
+    <!-- Modal: Contact -->
+    <div id="contact-modal" class="modal-overlay">
+    <div class="modal">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+
+        <h2 class="modal-title">Contact PraxisCore</h2>
+
+        <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST">
+
+        <label class="modal-label">Email *</label>
+        <input type="email" name="email" required class="modal-input">
+
+        <label class="modal-label">Phone (optional)</label>
+        <input type="text" name="phone" class="modal-input">
+
+        <label class="modal-label">Message (optional)</label>
+        <textarea name="message" rows="4" class="modal-input"></textarea>
+
+        <button type="submit" class="modal-submit">Send</button>
+        </form>
+
+        <p id="contact-success" class="modal-success">Your message has been sent.</p>
+    </div>
+    </div>
     <svg style="display:none" aria-hidden="true" focusable="false">
 
     <!-- DOWN ARROW -->
@@ -131,7 +155,7 @@
                         <p id="text07" class="text-component instance-7 style-6">We work with a small number of partners at a time. Missions are led by senior operators — not analysts — with clear deliverables and measurable outcomes.</p>
                         <ul id="buttons02" class="buttons-component instance-2 style-2">
                             <li>
-                                <a href="#" class="n01" role="button">
+                                <a href="#" onclick="openContactModal(event);" class="n01" role="button">
                                     <svg aria-hidden="true" width="24" height="24">
                                         <use xlink:href="#icon-arrow-right"></use>
                                     </svg>
