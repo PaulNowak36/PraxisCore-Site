@@ -2665,3 +2665,30 @@
     border-left: 3px solid #F2E2C3;
     padding-left: 2.8rem;
 }
+
+/*LISTE DES PARTENAIRES*/
+
+.partner-block {
+    margin-bottom: 2rem;
+}
+
+.partner-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #F2E2C3;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02rem;
+}
+
+.partner-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.partner-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(184,186,209,0.85);
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+}
