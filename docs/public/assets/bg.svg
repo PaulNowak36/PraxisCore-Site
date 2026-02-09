@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <rect width="1200" height="1200" fill="#0b0b0b"/>
+  <g shape-rendering="geometricPrecision">
+    <polygon points="0,0 210,0 120,140" fill="#141414"/>
+    <polygon points="210,0 390,0 300,170" fill="#1b1b1b"/>
+    <polygon points="390,0 610,0 500,150" fill="#121212"/>
+    <polygon points="610,0 820,0 740,180" fill="#1e1e1e"/>
+    <polygon points="820,0 1030,0 940,160" fill="#171717"/>
+    <polygon points="1030,0 1200,0 1160,180" fill="#0f0f0f"/>
+    <polygon points="940,160 1160,180 1200,330" fill="#1a1a1a"/>
+    <polygon points="0,0 120,140 0,280" fill="#101010"/>
+    <polygon points="120,140 300,170 210,320" fill="#202020"/>
+    <polygon points="0,280 120,140 210,320" fill="#151515"/>
+    <polygon points="300,170 500,150 420,330" fill="#131313"/>
+    <polygon points="210,320 300,170 420,330" fill="#1c1c1c"/>
+
+    <polygon points="500,150 740,180 610,360" fill="#191919"/>
+    <polygon points="420,330 500,150 610,360" fill="#0e0e0e"/>
+    <polygon points="740,180 940,160 860,360" fill="#222222"/>
+    <polygon points="610,360 740,180 860,360" fill="#141414"/>
+
+    <polygon points="940,160 1030,0 1160,180" fill="#0d0d0d"/>
+    <polygon points="860,360 940,160 1200,330" fill="#171717"/>
+    <polygon points="0,280 210,320 80,520" fill="#1a1a1a"/>
+    <polygon points="210,320 420,330 300,540" fill="#0f0f0f"/>
+    <polygon points="80,520 210,320 300,540" fill="#161616"/>
+
+    <polygon points="420,330 610,360 500,560" fill="#222222"/>
+    <polygon points="300,540 420,330 500,560" fill="#121212"/>
+
+    <polygon points="610,360 860,360 720,560" fill="#141414"/>
+    <polygon points="500,560 610,360 720,560" fill="#1d1d1d"/>
+
+    <polygon points="860,360 1200,330 980,560" fill="#0e0e0e"/>
+    <polygon points="720,560 860,360 980,560" fill="#191919"/>
+    <polygon points="0,520 80,520 0,720" fill="#0f0f0f"/>
+    <polygon points="0,720 80,520 180,700" fill="#191919"/>
+    <polygon points="80,520 300,540 180,700" fill="#222222"/>
+
+    <polygon points="180,700 300,540 420,720" fill="#121212"/>
+    <polygon points="300,540 500,560 420,720" fill="#1a1a1a"/>
+
+    <polygon points="500,560 720,560 610,760" fill="#0d0d0d"/>
+    <polygon points="420,720 500,560 610,760" fill="#202020"/>
+
+    <polygon points="720,560 980,560 840,760" fill="#171717"/>
+    <polygon points="610,760 720,560 840,760" fill="#131313"/>
+
+    <polygon points="980,560 1200,330 1200,720" fill="#1e1e1e"/>
+    <polygon points="840,760 980,560 1200,720" fill="#101010"/>
+    <polygon points="0,720 180,700 60,900" fill="#141414"/>
+    <polygon points="180,700 420,720 260,920" fill="#0e0e0e"/>
+    <polygon points="60,900 180,700 260,920" fill="#1b1b1b"/>
+
+    <polygon points="420,720 610,760 500,940" fill="#191919"/>
+    <polygon points="260,920 420,720 500,940" fill="#222222"/>
+
+    <polygon points="610,760 840,760 700,950" fill="#101010"/>
+    <polygon points="500,940 610,760 700,950" fill="#1c1c1c"/>
+
+    <polygon points="840,760 1200,720 1020,960" fill="#151515"/>
+    <polygon points="700,950 840,760 1020,960" fill="#0d0d0d"/>
+    <polygon points="0,900 60,900 0,1200" fill="#0e0e0e"/>
+    <polygon points="0,1200 60,900 240,1200" fill="#171717"/>
+    <polygon points="60,900 260,920 240,1200" fill="#1f1f1f"/>
+
+    <polygon points="260,920 500,940 420,1200" fill="#121212"/>
+    <polygon points="240,1200 260,920 420,1200" fill="#1a1a1a"/>
+
+    <polygon points="500,940 700,950 600,1200" fill="#0f0f0f"/>
+    <polygon points="420,1200 500,940 600,1200" fill="#222222"/>
+
+    <polygon points="700,950 1020,960 840,1200" fill="#141414"/>
+    <polygon points="600,1200 700,950 840,1200" fill="#1b1b1b"/>
+
+    <polygon points="1020,960 1200,720 1200,1200" fill="#0d0d0d"/>
+    <polygon points="840,1200 1020,960 1200,1200" fill="#191919"/>
+  </g>
+</svg>

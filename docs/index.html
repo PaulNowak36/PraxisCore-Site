@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Praxiscore</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="design healthcare complex" />
+    <!-- OG / Twitter si tu veux les garder -->
+    <link rel="canonical" href="https://praxiscore.org" />
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="is-loading">
+    <!-- Modal: Request an introduction -->
+    <div id="intro-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Introduction to PraxisCore</h2>
+            <p class="modal-text">
+            PraxisCore provides senior-led operational expertise to help investors, hospitals and governments
+            understand whether a healthcare platform can scale — and how to make it happen.
+            <br><br>
+            An introduction allows us to understand your context and determine whether our operators can bring
+            meaningful value to your mission.
+            </p>
+        </div>
+    </div>
+    <!-- Modal: Our Services -->
+    <div id="services-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Our Services</h2>
+
+            <p class="modal-text">
+            PraxisCore supports healthcare platforms from strategy to operational execution — led by senior operators.
+            </p>
+
+            <ul class="modal-list">
+            <li>Governance & operating model</li>
+            <li>Throughput engineering & staffing logic</li>
+            <li>Design, commissioning & vendor strategy</li>
+            <li>Blueprint & implementation planning</li>
+            <li>Execution support & KPI cadence</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Modal: Contact -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Contact PraxisCore</h2>
+
+            <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST">
+
+            <label class="modal-label">Email *</label>
+            <input type="email" name="email" required class="modal-input">
+
+            <label class="modal-label">Phone (optional)</label>
+            <input type="text" name="phone" class="modal-input">
+
+            <label class="modal-label">Message (optional)</label>
+            <textarea name="message" rows="4" class="modal-input"></textarea>
+
+            <button type="submit" class="modal-submit">Send</button>
+            </form>
+
+            <p id="contact-success" class="modal-success">Your message has been sent.</p>
+        </div>
+    </div>
+    <!-- Modal: Request References -->
+    <div id="references-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Available References</h2>
+
+            <p class="modal-text">
+            We provide anonymized references covering a range of engagements:
+            governance redesign, throughput engineering, commissioning, and
+            operational turnaround across imaging, specialty care and hospital platforms.
+            <br><br>
+            These references outline the type of missions we lead, the operational
+            challenges addressed, and the measurable outcomes achieved.
+            </p>
+
+            <a id="references-download" class="modal-download" href="./public/references.pdf" download>
+            Download sample references (PDF)
+            </a>
+        </div>
+    </div>
+    <!-- Modal: Request a Call -->
+    <div id="call-modal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Request a Call</h2>
+
+            <p class="modal-text">
+            Choose how you would like to connect with a senior operator.
+            </p>
+
+            <div class="modal-call-options">
+
+                <a class="modal-call-btn" href="tel:+33686920417">
+                    Call us now
+                </a>
+
+                <a class="modal-call-btn" href="https://wa.me/33686920417" target="_blank">
+                    WhatsApp call
+                </a>
+
+                <a class="modal-call-btn" href="https://signal.me/#p/+333686920417" target="_blank">
+                    Signal call
+                </a>
+
+                <div class="modal-call-row">
+                    <button class="modal-call-small modal-call-schedule" onclick="openScheduleCallModal()">
+                        Schedule a call
+                    </button>
+
+                    <button class="modal-call-small modal-call-callback" onclick="openCallbackModal()">
+                        Request a callback
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Schedule a Call -->
+    <div id="schedule-call-modal" class="modal-overlay">
+        <div class="modal modal-alt">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Schedule a Call</h2>
+
+            <p class="modal-text">
+            Choose a time that works for you. Calls are led by senior operators and last 20–30 minutes.
+            
+            </p>
+
+            <a class="modal-schedule-btn" href="https://calendly.com/your-link" target="_blank">
+            Open scheduling page
+            </a>
+
+            <p class="modal-note">
+            You will be redirected to our scheduling platform (Calendly / Cal.com).
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal: Request a Callback -->
+    <div id="callback-modal" class="modal-overlay">
+        <div class="modal modal-alt2">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+
+            <h2 class="modal-title">Request a Callback</h2>
+
+            <p class="modal-text">
+            Leave your number and we will call you back within 24 hours.
+            </p>
+
+            <form id="callback-form" action="https://formspree.io/f/maqdwzpq" method="POST">
+
+                <!-- Hidden default message -->
+                <input type="hidden" name="context" value="A user wants to contact you from the PraxisCore website.">
+
+                <label class="modal-label">Phone number *</label>
+                <input type="text" name="phone" required class="modal-input">
+
+                <label class="modal-label">Preferred time (optional)</label>
+                <input type="text" name="time" class="modal-input">
+
+                <button type="submit" class="modal-submit">Request callback</button>
+            </form>
+
+            <p id="callback-success" class="modal-success">
+            Your callback request has been sent.
+            </p>
+        </div>
+    </div>
+
+    {{/*  ARROWS SYMBOLS  */}}
+    <svg style="display:none" aria-hidden="true" focusable="false">
+
+    <!-- DOWN ARROW -->
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+    <path
+        d="M12 5v14M6 13l6 6 6-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+    </symbol>
+
+    <!-- RIGHT ARROW -->
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path
+        d="M5 12h14M13 6l6 6-6 6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        />
+    </symbol>
+
+    </svg>
+
+    <div class="site-wrapper">
+      <main class="site-main">
+        <div class="inner">
+          <div id="container01" class="container-component instance-1 style-4 default full screen">
+            <div class="wrapper">
+                <div class="inner" data-onvisible-trigger="1">
+                    <div id="image01" class="image-component instance-1 style-1" data-position="center">
+                        <span class="frame">
+                            <img src="./public/assets/image01.png" alt="">
+                        </span>
+                    </div>
+                    <h2 id="text03" class="text-component instance-3 style-1">
+                        We design, govern and scale complex healthcare systems.
+                    </h2>
+
+                    <p id="text09" class="text-component instance-9 style-6">
+                        We partner with investors, hospitals and governments to turn high-complexity healthcare assets into robust, investable and long-term platforms — grounded in real clinical operations.
+                    </p>
+
+                    <ul id="buttons03" class="buttons-component instance-3 style-1">
+                        <li>
+                            <a href="#" onclick="openIntroModal(event);" class="n01" role="button">
+                                <svg aria-hidden="true" width="24" height="24">
+                                    <use xlink:href="#icon-arrow-down"></use>
+                                </svg>
+                                <span class="label">Request an introduction</span>
+                                
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+          <div id="container06" class="container-component instance-6 style-3 columns">
+            <div class="wrapper">
+                <div class="inner" data-onvisible-trigger="1">
+                    <div>
+                        <h2 id="text01" class="text-component instance-1 style-4">What we do</h2>
+                        <p id="text02" class="text-component instance-2 style-5">From strategy to operating reality.</p>
+                        <p id="text04" class="text-component instance-4 style-6">We design and govern scalable healthcare platforms — combining clinical governance, operational engineering and investor-grade structuring.</p>
+                        <ul id="buttons10" class="buttons-component instance-10 style-2">
+                            <li>
+                                <a href="#" onclick="openServicesModal(event);" class="n01" role="button">
+                                    <svg aria-hidden="true" width="24" height="24">
+                                        <use xlink:href="#icon-arrow-right"></use>
+                                    </svg>
+                                    <span class="label">Our services</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 id="text05" class="text-component instance-5 style-4">How we engage</h2>
+                        <p id="text06" class="text-component instance-6 style-5">Selective. Senior-led. Outcome-driven.</p>
+                        <p id="text07" class="text-component instance-7 style-6">We work with a small number of partners at a time. Missions are led by senior operators — not analysts — with clear deliverables and measurable outcomes.</p>
+                        <ul id="buttons02" class="buttons-component instance-2 style-2">
+                            <li>
+                                <a href="#" onclick="openContactModal(event);" class="n01" role="button">
+                                    <svg aria-hidden="true" width="24" height="24">
+                                        <use xlink:href="#icon-arrow-right"></use>
+                                    </svg>
+                                    <span class="label">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <p id="text17" class="text-component instance-17 style-2">Advisory · Governance · Operational engineering · Vendor-agnostic</p>
+          <div id="container04" class="container-component instance-4 style-2 columns">
+            <div class="wrapper">
+                <div class="inner" data-onvisible-trigger="1" data-reorder="1,0" data-reorder-breakpoint="medium">
+                    <div class="full">
+                        <div id="image04" class="image-component instance-4 style-2 full" data-position="center">
+                            <span class="frame">
+                                <img src="./public/assets/image04.jpg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 id="text31" class="text-component instance-31 style-7">OUR APPROACH</h2>
+                        <h2 id="text18" class="text-component instance-18 style-4">
+                            <span class="p">We do not sell reports.<br> We build systems.</span>
+                        </h2>
+                        <p id="text19" class="text-component instance-19 style-8">
+                            <span class="p">From clinical reality to operational outcomes.<br> Governance, operating models and performance systems — led end-to-end by senior operators.</span>
+                            <span class="p">Governance • Operational engineering • Vendor-agnostic commissioning</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+           </div>
+          <h2 id="text08" class="text-component instance-8 style-9">Capabilities</h2>
+          <p id="text20" class="text-component instance-20 style-2">Board-level advisory, grounded in real operations.</p>
+          <div id="container03" class="container-component instance-3 style-3 columns">
+            <div class="wrapper">
+                <div class="inner" data-onvisible-trigger="1">
+                    <div>
+                        <h2 id="text13" class="text-component instance-13 style-4">What we deliver</h2>
+                        <p id="text14" class="text-component instance-14 style-5">Design and execution support for complex healthcare platforms</p>
+                        <p id="text15" class="text-component instance-15 style-6">
+                            <span class="p">• Governance &amp; operating model<br> • Throughput engineering &amp; staffing logic<br> • Design, commissioning &amp; vendor strategy<br> • For hospitals, governments and investors.
+                            </span>
+                        </p>
+                    </div>
+                    <div>
+                        <h2 id="text16" class="text-component instance-16 style-4">How we engage</h2>
+                        <p id="text27" class="text-component instance-27 style-5">
+                            <span class="p">Hands-on, senior-led, vendor-agnostic.<br> We stay close to the clinical floor.
+                            </span>
+                        </p>
+                        <p id="text30" class="text-component instance-30 style-6">
+                            <span class="p">• Rapid diagnostic (2–4 weeks)<br> • Blueprint &amp; implementation plan<br> • Execution support &amp; KPI cadence<br> • Confidential, Outcome-driven
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div id="container02" class="container-component instance-2 style-2 columns">
+            <div class="wrapper">
+                <div class="inner" data-onvisible-trigger="1">
+                    <div>
+                        <div id="image22" class="image-component instance-22 style-3 full" data-position="top">
+                            <span class="frame">
+                                <img src="./public/assets/image22.jpg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 id="text46" class="text-component instance-46 style-7">Proof : turning complexity into throughput</h2>
+                        <p id="text37" class="text-component instance-37 style-6">
+                            <span class="p">We help complex imaging and specialty-care platforms move from design intent to operational reality.<br> Governance, layout, staffing and KPI cadence — executed with senior operators on the ground.</span>
+                        </p>
+                        <ul id="buttons07" class="buttons-component instance-7 style-2">
+                            <li>
+                                <a href="#" onclick="openReferencesModal(event);" class="n01" role="button">
+                                    <svg aria-hidden="true" width="24" height="24">
+                                        <use xlink:href="#icon-arrow-right"></use>
+                                    </svg>
+                                    <span class="label">Request references</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <p id="text21" class="text-component instance-21 style-2">BUILT BY OPERATORS</p>
+          <p id="text22" class="text-component instance-22 style-10">Senior clinicians and operators</p>
+          <p id="text23" class="text-component instance-23 style-11"><span class="p">We stay involved end-to-end: governance, commissioning and operational performance.</span><span class="p">France-based. International engagements.</span></p>
+          <h2 id="text10" class="text-component instance-10 style-9">What we do</h2>
+          <div id="container07" class="container-component instance-7 style-1 columns">
+            <div class="wrapper">
+                <div class="inner">
+                    <div>
+                        <p id="text11" class="text-component instance-11 style-2">Governance</p>
+                        <p id="text29" class="text-component instance-29 style-6">Decision systems that hold in real life.</p>
+                    </div>
+                    <div>
+                        <p id="text12" class="text-component instance-12 style-2">Commissioning</p>
+                        <p id="text28" class="text-component instance-28 style-6">Vendor-agnostic design, build and go-live.</p>
+                    </div>
+                    <div>
+                        <p id="text24" class="text-component instance-24 style-2">Throughout</p>
+                        <p id="text26" class="text-component instance-26 style-6">Flow discipline, staffing and KPI cadence.</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <h2 id="text32" class="text-component instance-32 style-1">Partners</h2>
+            <div id="container11" class="container-component instance-11 style-2 columns">
+                <div class="wrapper">
+                    <div class="inner" data-onvisible-trigger="1">
+
+                    <div class="partner-block">
+                        <p class="partner-title">Investors</p>
+                        <ul class="partner-list">
+                        <li>Private equity & infrastructure funds</li>
+                        <li>Family offices & long-term investors</li>
+                        <li>Sovereign & quasi-sovereign entities</li>
+                        </ul>
+                    </div>
+
+                    <div class="partner-block">
+                        <p class="partner-title">Healthcare Operators</p>
+                        <ul class="partner-list">
+                        <li>Healthcare groups & hospital networks</li>
+                        <li>Advanced imaging & specialty-care platforms</li>
+                        </ul>
+                    </div>
+
+                    <div class="partner-block">
+                        <p class="partner-title">Public Institutions</p>
+                        <ul class="partner-list">
+                        <li>Governments & ministries</li>
+                        <li>Public health agencies</li>
+                        <li>Cross-border regulatory bodies</li>
+                        </ul>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+          <div id="container05" class="container-component instance-5 style-4 default full screen">
+            <div class="wrapper">
+                <div class="inner" data-onvisible-trigger="1">
+                    <h2 id="text47" class="text-component instance-47 style-4">Confidential discussion</h2>
+                    <p id="text25" class="text-component instance-25 style-2">Tell us the context — we reply with a clear scope and next steps.</p>
+                    <ul id="buttons01" class="buttons-component instance-1 style-1">
+                        <li>
+                            <a href="#" onclick="openCallModal(event);" class="n01" role="button">
+                                <svg aria-hidden="true" width="24" height="24">
+                                    <use xlink:href="#icon-arrow-right"></use>
+                                </svg>
+                                <span class="label">Request a call</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
