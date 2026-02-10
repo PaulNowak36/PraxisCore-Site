@@ -2692,3 +2692,44 @@
     margin-bottom: 0.4rem;
     line-height: 1.6;
 }
+
+/* TEXTE INTRO */
+
+/* Bloc de texte sous l'image d'intro */
+.intro-text-block {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Lieu : style discret, institutionnel */
+.intro-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(184,186,209,0.6);
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+/* Sous-titre : couleur sable, premium */
+.intro-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #F2E2C3;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02rem;
+}
+
+/* Animation subtile (déjà utilisée ailleurs dans ton site) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
