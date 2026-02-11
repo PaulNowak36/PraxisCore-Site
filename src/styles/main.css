@@ -2535,6 +2535,14 @@
     font-size: 0.9rem;
 }
 
+.modal-error {
+    display: none;
+    margin-top: 1.5rem;
+    color: #F7C5C5; /* rouge pastel premium */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
 /* MODAL POUR LE TELECHARGEMENT DU PDF */
 
 .modal-download {
@@ -2762,27 +2770,29 @@
     margin-bottom: 4rem;
 }
 
-/* Grille 3 + 2 */
+/* Grille par défaut : 1 colonne */
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 2rem; /* vertical gap plus large */
-    text-align: left;
+    grid-template-columns: 1fr;
+    gap: 3rem 3rem;
+    justify-items: center;
 }
 
-/* Items style identique à container07 (style-2) */
+/* Style des items */
 .expertise-item {
+    text-align: center;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: #F2E2C3;
+    font-size: 1.25em;
+    color: #AF9156;
     letter-spacing: 0.02rem;
-    font-weight: 500;
+    line-height: 1.2;
+    font-weight: 300;
+    width: 100%;
 }
 
-/* Responsive : 1 colonne sur mobile */
-@media (max-width: 900px) {
+/* Large écrans : 3 colonnes */
+@media (min-width: 1600px) {
     .expertise-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 }

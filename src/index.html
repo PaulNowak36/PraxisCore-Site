@@ -61,21 +61,21 @@
 
             <h2 class="modal-title">Contact PraxisCore</h2>
 
-            <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST" novalidate>
+                <label class="modal-label">Email *</label>
+                <input type="email" name="email" id="contact-email" required class="modal-input">
 
-            <label class="modal-label">Email *</label>
-            <input type="email" name="email" required class="modal-input">
+                <label class="modal-label">Phone (optional)</label>
+                <input type="text" name="phone" id="contact-phone" class="modal-input">
 
-            <label class="modal-label">Phone (optional)</label>
-            <input type="text" name="phone" class="modal-input">
+                <label class="modal-label">Message (optional)</label>
+                <textarea name="message" rows="4" class="modal-input"></textarea>
 
-            <label class="modal-label">Message (optional)</label>
-            <textarea name="message" rows="4" class="modal-input"></textarea>
-
-            <button type="submit" class="modal-submit">Send</button>
+                <button type="submit" class="modal-submit">Send</button>
             </form>
 
             <p id="contact-success" class="modal-success">Your message has been sent.</p>
+            <p id="contact-error" class="modal-error">An error occurred. Please check your information.</p>
         </div>
     </div>
     <!-- Modal: Request References -->
@@ -401,22 +401,17 @@
             </div>
           </div>
           <h2 id="text10" class="text-component instance-10 style-9">Areas of expertise</h2>
-          <div id="container-expertise" class="container-component instance-expertise style-1 columns">
+         <section id="container-expertise" class="container-component">
             <div class="wrapper">
-                <div class="inner expertise-grid">
-
-                    <!-- Ligne 1 : 3 items -->
+                <div class="expertise-grid">
                     <div class="expertise-item">Nuclear medicine</div>
                     <div class="expertise-item">Cardiovascular diagnostics</div>
                     <div class="expertise-item">Advanced imaging</div>
-
-                    <!-- Ligne 2 : 2 items -->
                     <div class="expertise-item">Regulated environments</div>
                     <div class="expertise-item">Cross-border projects</div>
-
                 </div>
             </div>
-        </div>
+        </section>
           <h2 id="text32" class="text-component instance-32 style-1">Partners</h2>
             <div id="container11" class="container-component instance-11 style-2 columns">
                 <div class="wrapper">
