@@ -2796,3 +2796,72 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
+
+
+/* FOUNDERS */
+
+
+/* SECTION WRAPPER */
+.founders-section {
+    padding: 5rem 0;
+    background: #0F0F0F; /* même ambiance premium que le reste */
+    text-align: center;
+}
+
+/* TITLE */
+.founders-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #F2E2C3;
+    margin-bottom: 3rem;
+}
+
+/* GRID */
+.founders-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.founder-card {
+    background: #1A1A1A;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.founder-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+/* PHOTO */
+.founder-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* NAME */
+.founder-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+/* ROLE */
+.founder-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #CFCFCF;
+}
