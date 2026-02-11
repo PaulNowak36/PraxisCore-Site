@@ -136,10 +136,30 @@ if (contactForm) {
 
 const callbackForm = document.getElementById("callback-form");
 const callbackSuccess = document.getElementById("callback-success");
+const callbackError = document.getElementById("callback-error");
 
 if (callbackForm) {
     callbackForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        // Reset messages
+        callbackSuccess.style.display = "none";
+        callbackError.style.display = "none";
+
+        const phoneInput = document.getElementById("callback-phone");
+
+        const phoneRaw = phoneInput.value.trim();
+
+        // On retire les espaces du numéro
+        const phoneDigits = phoneRaw.replace(/\s+/g, "");
+
+        // Validation téléphone (obligatoire ou optionnel selon ton besoin)
+        if (!/^\d{10}$/.test(phoneDigits)) {
+            callbackError.textContent = "Phone number must contain exactly 10 digits (spaces allowed).";
+            callbackError.style.display = "block";
+            phoneInput.focus();
+            return;
+        }
 
         const formData = new FormData(callbackForm);
         const action = callbackForm.getAttribute("action");
@@ -153,6 +173,10 @@ if (callbackForm) {
         if (response.ok) {
             callbackForm.reset();
             callbackSuccess.style.display = "block";
+        } else {
+            callbackForm.reset();
+            callbackError.style.display = "block";
         }
+
     });
 }

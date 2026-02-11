@@ -75,7 +75,7 @@
             </form>
 
             <p id="contact-success" class="modal-success">Your message has been sent.</p>
-            <p id="contact-error" class="modal-error">An error occurred. Please check your information.</p>
+            <p id="contact-error" class="modal-error">An error occurred. Please check your email or your phone number.</p>
         </div>
     </div>
     <!-- Modal: Request References -->
@@ -177,7 +177,7 @@
                 <input type="hidden" name="context" value="A user wants to contact you from the PraxisCore website.">
 
                 <label class="modal-label">Phone number *</label>
-                <input type="text" name="phone" required class="modal-input">
+                <input type="text" name="phone" id="callback-phone" required class="modal-input">
 
                 <label class="modal-label">Preferred time (optional)</label>
                 <input type="text" name="time" class="modal-input">
@@ -187,6 +187,10 @@
 
             <p id="callback-success" class="modal-success">
             Your callback request has been sent.
+            </p>
+
+            <p id="callback-error" class="modal-error">
+            An error occurred. Please check your phone number.
             </p>
         </div>
     </div>
