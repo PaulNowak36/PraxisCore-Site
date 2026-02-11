@@ -2733,3 +2733,56 @@
         transform: translateY(0);
     }
 }
+
+.modal-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #F2E2C3;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+.modal-highlight {
+    margin-top: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: rgba(242, 226, 195, 0.9);
+    line-height: 1.6;
+    text-align: left;
+    border-left: 2px solid #F2E2C3;
+    padding-left: 1rem;
+}
+
+/* Container: Areas of Expertise */
+
+/* Container spacing */
+#container-expertise {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Grille 3 + 2 */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2rem; /* vertical gap plus large */
+    text-align: left;
+}
+
+/* Items style identique à container07 (style-2) */
+.expertise-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #F2E2C3;
+    letter-spacing: 0.02rem;
+    font-weight: 500;
+}
+
+/* Responsive : 1 colonne sur mobile */
+@media (max-width: 900px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
