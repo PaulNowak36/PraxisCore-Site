@@ -2764,21 +2764,25 @@
 
 /* Container: Areas of Expertise */
 
-/* Container spacing */
 #container-expertise {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin: 8rem 0; /* plus d’espace haut/bas */
+
 }
 
-/* Grille par défaut : 1 colonne */
-.expertise-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem 3rem;
-    justify-items: center;
+.expertise-columns {
+    display: flex;
+    justify-content: center; /* centre les 2 colonnes */
+    flex-direction: column;
+    gap: 6rem; /* espace horizontal entre colonnes */
+    
 }
 
-/* Style des items */
+.expertise-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* le vrai space-around vertical */
+}
+
 .expertise-item {
     text-align: center;
     font-family: 'Inter', sans-serif;
@@ -2787,17 +2791,26 @@
     letter-spacing: 0.02rem;
     line-height: 1.2;
     font-weight: 300;
-    width: 100%;
+    max-width: 600px;
 }
 
-/* Large écrans : 3 colonnes */
-@media (min-width: 1600px) {
-    .expertise-grid {
-        grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1600px) {
+
+    .expertise-columns {
+        display: flex;
+        align-items: center;         /* centre la grosse colonne */
+
+        flex-direction: column;
+        gap: 2rem; /* espace horizontal entre colonnes */
+        
+    }
+    .expertise-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; /* le vrai space-around vertical */
+        gap: 2rem; /* espace horizontal entre colonnes */
     }
 }
-
-
 
 
 /* FOUNDERS */
