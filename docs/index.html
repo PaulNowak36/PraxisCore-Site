@@ -18,11 +18,13 @@
 
             <h2 class="modal-title">Introduction to PraxisCore</h2>
             <p class="modal-text">
-            PraxisCore provides senior-led operational expertise to help investors, hospitals and governments
-            understand whether a healthcare platform can scale — and how to make it happen.
+            PraxisCore designs, governs and scales high-complexity healthcare systems, starting
+            from clinical reality and operational constraints, and translating them into robust,
+            investable and long-term platforms.
             <br><br>
-            An introduction allows us to understand your context and determine whether our operators can bring
-            meaningful value to your mission.
+            We partner with investors, healthcare groups and public institutions to structure, launch
+            and operate advanced medical platforms, with a strong focus on nuclear medicine,
+            cardiovascular diagnostics and highly regulated clinical environments.
             </p>
         </div>
     </div>
@@ -31,19 +33,25 @@
         <div class="modal">
             <button class="modal-close" aria-label="Close modal">&times;</button>
 
-            <h2 class="modal-title">Our Services</h2>
+            <h2 class="modal-title">What we do</h2>
 
             <p class="modal-text">
-            PraxisCore supports healthcare platforms from strategy to operational execution — led by senior operators.
+                PraxisCore intervenes across the entire lifecycle of healthcare assets — from strategic conception to long‑term governance.
             </p>
 
+            <h3 class="modal-subtitle">Core activities</h3>
             <ul class="modal-list">
-            <li>Governance & operating model</li>
-            <li>Throughput engineering & staffing logic</li>
-            <li>Design, commissioning & vendor strategy</li>
-            <li>Blueprint & implementation planning</li>
-            <li>Execution support & KPI cadence</li>
+                <li>Healthcare platform design & commissioning</li>
+                <li>Medical governance & operational engineering</li>
+                <li>Board‑level medical and strategic advisory</li>
+                <li>Public–private healthcare structuring (PPP / hybrid models)</li>
+                <li>Selective co‑investment alongside partners</li>
             </ul>
+
+            <p class="modal-highlight">
+                We do not provide generic consulting.<br>
+                We build systems grounded in real‑world clinical operations.
+            </p>
         </div>
     </div>
     <!-- Modal: Contact -->
@@ -53,21 +61,21 @@
 
             <h2 class="modal-title">Contact PraxisCore</h2>
 
-            <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST" novalidate>
+                <label class="modal-label">Email *</label>
+                <input type="email" name="email" id="contact-email" required class="modal-input">
 
-            <label class="modal-label">Email *</label>
-            <input type="email" name="email" required class="modal-input">
+                <label class="modal-label">Phone (optional)</label>
+                <input type="text" name="phone" id="contact-phone" class="modal-input">
 
-            <label class="modal-label">Phone (optional)</label>
-            <input type="text" name="phone" class="modal-input">
+                <label class="modal-label">Message (optional)</label>
+                <textarea name="message" rows="4" class="modal-input"></textarea>
 
-            <label class="modal-label">Message (optional)</label>
-            <textarea name="message" rows="4" class="modal-input"></textarea>
-
-            <button type="submit" class="modal-submit">Send</button>
+                <button type="submit" class="modal-submit">Send</button>
             </form>
 
             <p id="contact-success" class="modal-success">Your message has been sent.</p>
+            <p id="contact-error" class="modal-error">An error occurred. Please check your email or your phone number.</p>
         </div>
     </div>
     <!-- Modal: Request References -->
@@ -169,7 +177,7 @@
                 <input type="hidden" name="context" value="A user wants to contact you from the PraxisCore website.">
 
                 <label class="modal-label">Phone number *</label>
-                <input type="text" name="phone" required class="modal-input">
+                <input type="text" name="phone" id="callback-phone" required class="modal-input">
 
                 <label class="modal-label">Preferred time (optional)</label>
                 <input type="text" name="time" class="modal-input">
@@ -179,6 +187,10 @@
 
             <p id="callback-success" class="modal-success">
             Your callback request has been sent.
+            </p>
+
+            <p id="callback-error" class="modal-error">
+            An error occurred. Please check your phone number.
             </p>
         </div>
     </div>
@@ -218,11 +230,20 @@
           <div id="container01" class="container-component instance-1 style-4 default full screen">
             <div class="wrapper">
                 <div class="inner" data-onvisible-trigger="1">
+
                     <div id="image01" class="image-component instance-1 style-1" data-position="center">
                         <span class="frame">
                             <img src="./public/assets/image01.png" alt="">
                         </span>
                     </div>
+
+                    <!-- Nouveau bloc de texte ajouté ici -->
+                    <div id="intro-text" class="intro-text-block">
+                        <p class="intro-location">Luxembourg</p>
+                        <p class="intro-subtitle">Architects of complex healthcare platforms</p>
+                    </div>
+                    <!-- Fin du nouveau bloc -->
+
                     <h2 id="text03" class="text-component instance-3 style-1">
                         We design, govern and scale complex healthcare systems.
                     </h2>
@@ -238,13 +259,13 @@
                                     <use xlink:href="#icon-arrow-down"></use>
                                 </svg>
                                 <span class="label">Request an introduction</span>
-                                
                             </a>
                         </li>
                     </ul>
+
                 </div>
             </div>
-            </div>
+        </div>
           <div id="container06" class="container-component instance-6 style-3 columns">
             <div class="wrapper">
                 <div class="inner" data-onvisible-trigger="1">
@@ -383,6 +404,68 @@
                 </div>
             </div>
           </div>
+          <h2 id="text10" class="text-component instance-10 style-9">Areas of expertise</h2>
+         <section id="container-expertise" class="container-component">
+            <div class="wrapper">
+                <div class="expertise-columns">
+                    
+                    <div class="expertise-col">
+                        <div class="expertise-item">
+                            <img class="expertise-photo" src="./public/assets/medecine-nucleaire.jpg" alt="Nuclear medicine icon">
+                            Nuclear medicine
+                        </div>
+
+                        <div class="expertise-item">
+                            <img class="expertise-photo" src="./public/assets/cardiovasculaire.jpg" alt="Cardiovascular diagnostics icon">
+                            Cardiovascular diagnostics
+                        </div>
+                        <div class="expertise-item">
+                            <img class="expertise-photo" src="./public/assets/imagerie-avancee.png" alt="Advanced imaging icon">
+                            Advanced imaging
+                        </div>
+                    </div>
+
+                    <div class="expertise-col">
+                        <div class="expertise-item">
+                            <img class="expertise-photo" src="./public/assets/environnement.webp" alt="Regulated environments icon">
+                            Regulated environments
+                        </div>
+                        <div class="expertise-item">
+                            <img class="expertise-photo" src="./public/assets/cross-border.jpg" alt="Cross-border projects icon">
+                            Cross-border projects
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="founders" class="founders-section">
+
+                <h2 class="founders-title">FOUNDERS</h2>
+
+                <div class="founders-cards">
+
+                    <div class="founder-card">
+                        <img src="./public/assets/VictorArnould.png" alt="Victor Arnould" class="founder-photo">
+                        <h4 class="founder-name">Victor ARNOULD, Dr.</h4>
+                        <p class="founder-role">Physician · Healthcare Operator · Entrepreneur</p>
+                    </div>
+
+                    <div class="founder-card">
+                        <img src="./public/assets/HugoLemasle.jpeg" alt="Hugo Lemasle" class="founder-photo">
+                        <h4 class="founder-name">Hugo LEMASLE, Dr.</h4>
+                        <p class="founder-role">Physician · Healthcare Operator · Entrepreneur</p>
+                    </div>
+
+                    <div class="founder-card">
+                        <img src="./public/assets/AntoninNoyelle.png" alt="Antonin Noyelle" class="founder-photo">
+                        <h4 class="founder-name">Antonin NOYELLE</h4>
+                        <p class="founder-role">CFO · Fund Manager · Entrepreneur</p>
+                    </div>
+
+                </div>
+
+        </section>
           <h2 id="text32" class="text-component instance-32 style-1">Partners</h2>
             <div id="container11" class="container-component instance-11 style-2 columns">
                 <div class="wrapper">

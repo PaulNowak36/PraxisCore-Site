@@ -76,11 +76,44 @@ document.addEventListener("keydown", (e) => {
 
 const contactForm = document.getElementById("contact-form");
 const contactSuccess = document.getElementById("contact-success");
+const contactError = document.getElementById("contact-error");
 
 if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        // Reset messages
+        contactSuccess.style.display = "none";
+        contactError.style.display = "none";
+
+        const emailInput = document.getElementById("contact-email");
+        const phoneInput = document.getElementById("contact-phone");
+
+        const email = emailInput.value.trim();
+        const phoneRaw = phoneInput.value.trim();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // On retire les espaces
+        const phoneDigits = phoneRaw.replace(/\s+/g, "");
+
+        // Email invalide
+        if (!emailRegex.test(email)) {
+            contactError.textContent = "Please enter a valid email address.";
+            contactError.style.display = "block";
+            emailInput.focus();
+            return;
+        }
+
+        // Téléphone rempli mais invalide
+        if (phoneRaw !== "" && !/^\d{10}$/.test(phoneDigits)) {
+            contactError.textContent = "Phone number must contain exactly 10 digits.";
+            contactError.style.display = "block";
+            phoneInput.focus();
+            return;
+        }
+
+        // Tout est valide → envoi Formspree
         const formData = new FormData(contactForm);
         const action = contactForm.getAttribute("action");
 
@@ -93,18 +126,40 @@ if (contactForm) {
         if (response.ok) {
             contactForm.reset();
             contactSuccess.style.display = "block";
+        } else {
+            contactForm.reset();
+            contactError.style.display = "block";
         }
     });
 }
-
 // GESTION DE L'APPEL DE RETOUR
 
 const callbackForm = document.getElementById("callback-form");
 const callbackSuccess = document.getElementById("callback-success");
+const callbackError = document.getElementById("callback-error");
 
 if (callbackForm) {
     callbackForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        // Reset messages
+        callbackSuccess.style.display = "none";
+        callbackError.style.display = "none";
+
+        const phoneInput = document.getElementById("callback-phone");
+
+        const phoneRaw = phoneInput.value.trim();
+
+        // On retire les espaces du numéro
+        const phoneDigits = phoneRaw.replace(/\s+/g, "");
+
+        // Validation téléphone (obligatoire ou optionnel selon ton besoin)
+        if (!/^\d{10}$/.test(phoneDigits)) {
+            callbackError.textContent = "Phone number must contain exactly 10 digits (spaces allowed).";
+            callbackError.style.display = "block";
+            phoneInput.focus();
+            return;
+        }
 
         const formData = new FormData(callbackForm);
         const action = callbackForm.getAttribute("action");
@@ -118,6 +173,10 @@ if (callbackForm) {
         if (response.ok) {
             callbackForm.reset();
             callbackSuccess.style.display = "block";
+        } else {
+            callbackForm.reset();
+            callbackError.style.display = "block";
         }
+
     });
 }
