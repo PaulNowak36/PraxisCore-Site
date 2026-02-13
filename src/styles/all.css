@@ -214,7 +214,7 @@
     }
 
     .text-component.style-6:not(:first-child) {
-        margin-top: 2.5rem !important;
+        /* margin-top: 2.5rem !important; */
     }
 
     .text-component.style-6:not(:last-child) {
@@ -234,6 +234,7 @@
 
     .activities-row .text-component.style-6 {
         text-align: center;
+        margin: ;
     }
 
 
@@ -1309,6 +1310,25 @@
         border: 1px solid rgba(255,255,255,0.05);
         display: block;
         margin: 0 auto 0.6rem auto; /* centre + réduit l’espace avec le texte */
+
+    }
+
+    @media (max-width: 1600px) { 
+
+        .activities-row {
+            align-items: center; 
+            flex-direction: column;
+            gap: 2rem;              
+        }
+
+        .activities {
+            max-width: 100%;     /* la colonne prend toute la largeur */
+            flex: 0 1 100%;      /* empêche la compression */
+            align-items: center; /* centre le contenu */
+            text-align: center;
+        }
+
+
 
     }
 
@@ -2699,7 +2719,7 @@
     .expertise-columns {
         display: flex;
         align-items: center;         /* centre la grosse colonne */
-
+        
         flex-direction: column;
         gap: 2rem; /* espace horizontal entre colonnes */
         
