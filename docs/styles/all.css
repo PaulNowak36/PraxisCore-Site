@@ -214,7 +214,7 @@
     }
 
     .text-component.style-6:not(:first-child) {
-        margin-top: 2.5rem !important;
+        /* margin-top: 2.5rem !important; */
     }
 
     .text-component.style-6:not(:last-child) {
@@ -231,6 +231,13 @@
         line-height: 2.125;
         font-weight: 300;
     }
+
+    .activities-row .text-component.style-6 {
+        text-align: center;
+        margin: ;
+    }
+
+
 
     .text-component.style-6 a {
         text-decoration: underline;
@@ -420,6 +427,11 @@
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 0.01em rgba(255,240,252,0.702);
         text-stroke: 0.01em rgba(255,240,252,0.702);
+    }
+
+        /* Ajustements spécifiques pour "What we do" */
+    #text10.style-9 {
+        margin-top: 10rem !important;   /* plus d’espace au-dessus */
     }
 
     .text-component.style-9 mark {
@@ -1070,6 +1082,7 @@
         border-style: solid;
         border-width: 1px;
         border-radius: 1rem;
+        margin-top: 6rem;
     }
 
     .container-component.style-2:not(:last-child) {
@@ -1231,9 +1244,9 @@
         background-color: transparent;
     }
 
-    .container-component.style-1 > .wrapper > .inner {
+     .container-component.style-1 > .wrapper > .inner {
         --gutters: 10.25rem;
-        padding: var(--padding-vertical) var(--padding-horizontal);
+        padding: 3rem;
     }
 
     .container-component.style-1 > .wrapper {
@@ -1255,16 +1268,73 @@
     }
 
     .container-component.style-1.columns > .wrapper > .inner {
-        flex-wrap: wrap;
         display: flex;
+        
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: space-around; /* centre les blocs entre eux */
     }
 
+    /* Section globale */
+    .activities-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* La rangée de 3 colonnes */
+    .activities-row {
+        width: 100%;                     /* prend toute la largeur */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;   /* espace autour de chaque bloc */
+        align-items: flex-start;
+        padding: 2rem 0;                 /* optionnel : respiration verticale */
+    }
+
+    /* Chaque colonne */
+    .activities {
+        display: flex;
+        flex-direction: column;
+        align-items: center;             /* centre horizontalement */
+        text-align: center;              /* centre le texte */
+        max-width: 30%;                  /* ta contrainte stricte */
+        flex: 0 1 30%;                   /* ne dépasse pas 30% */
+    }
+
+    .activities img {
+        width: 20rem;   
+        height: 14rem;  
+        object-fit: cover;  /* remplit le cadre sans déformation */
+        border-radius: 0.75rem;
+        border: 1px solid rgba(255,255,255,0.05);
+        display: block;
+        margin: 0 auto 0.6rem auto; /* centre + réduit l’espace avec le texte */
+
+    }
+
+    @media (max-width: 1600px) { 
+
+        .activities-row {
+            align-items: center; 
+            flex-direction: column;
+            gap: 2rem;              
+        }
+
+        .activities {
+            max-width: 100%;     /* la colonne prend toute la largeur */
+            flex: 0 1 100%;      /* empêche la compression */
+            align-items: center; /* centre le contenu */
+            text-align: center;
+        }
+
+
+
+    }
+
+
     .container-component.style-1.columns > .wrapper > .inner > * {
-        flex-grow: 0;
-        flex-shrink: 0;
-        max-width: 100%;
-        text-align: var(--alignment);
+        width: 33%;
         padding: 0 0 0 var(--gutters);
     }
 
@@ -1374,7 +1444,9 @@
 
     .container-component.instance-11 > .wrapper > .inner > :nth-child(3) {
         width: calc(33.33333% + (var(--gutters) / 3));
-    }
+    } 
+    
+    
 
     @media (max-width: 1920px) {
     }
@@ -2370,6 +2442,13 @@
     font-size: 0.9rem;
 }
 
+.modal-info {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
 /* MODAL POUR LE TELECHARGEMENT DU PDF */
 
 .modal-download {
@@ -2640,7 +2719,7 @@
     .expertise-columns {
         display: flex;
         align-items: center;         /* centre la grosse colonne */
-
+        
         flex-direction: column;
         gap: 2rem; /* espace horizontal entre colonnes */
         
