@@ -26,7 +26,7 @@
     gap: 28px;
     list-style: none;
     margin: 0;
-    padding: 12px 0; /* léger padding interne */
+    padding: 0.2rem 0; /* léger padding interne */
 }
 
 /* Style du texte basé sur text-component style-5 */
@@ -57,4 +57,27 @@
         gap: 14px;
         justify-content: flex-start;
     }
+}
+
+
+/* Décalage automatique pour éviter que le sticky-nav cache les sections */
+
+#text08,
+#text10,
+#container-expertise,
+#founders,
+#container11,
+#container05 {
+    scroll-margin-top: 5rem;
+}
+
+
+#container-expertise, #container11
+{
+    scroll-margin-top: 13rem;
+}
+
+#text31, #container06
+{
+    scroll-margin-top: 15rem;
 }
