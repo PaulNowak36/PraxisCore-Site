@@ -1,0 +1,60 @@
+/* ===========================
+   PraxisCore — Sticky Navigation
+   =========================== */
+
+/* Nouveau style de container */
+
+
+/* Sticky behavior */
+#sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    
+}
+
+/* Structure interne */
+.nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap; /* multi-rows sur mobile */
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0; /* léger padding interne */
+}
+
+/* Style du texte basé sur text-component style-5 */
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.nav-link:active {
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 14px;
+        justify-content: flex-start;
+    }
+}
