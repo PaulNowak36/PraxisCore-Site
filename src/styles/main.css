@@ -1,2 +1,5 @@
-@import url("./all.css");
 @import url("./base.css");
+@import url("./text.css");
+@import url("./buttons.css");
+@import url("./image.css");
+@import url("./all.css");

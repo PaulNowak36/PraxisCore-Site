@@ -1,0 +1,229 @@
+.buttons-component {
+    cursor: default;
+    display: flex;
+    justify-content: var(--flex-alignment);
+    letter-spacing: 0;
+    padding: 0;
+}
+
+.buttons-component > li {
+    max-width: 100%;
+    text-align: var(--alignment);
+}
+
+.buttons-component > li > a {
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.buttons-component.style-2 {
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.buttons-component.style-2:not(:first-child) {
+    margin-top: 3.5rem !important;
+}
+
+.buttons-component.style-2:not(:last-child) {
+    margin-bottom: 3.5rem !important;
+}
+
+.buttons-component.style-2 > li > a {
+    display: inline-flex;
+    width: auto;
+    height: 4.5rem;
+    line-height: calc(4.5rem - 4px);
+    padding: 0 2.25rem;
+    vertical-align: middle;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    border-radius: 2.5rem;
+    border-color: #AF9156;
+    border-style: solid;
+    border-width: 2px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    background-color: transparent;
+    color: #B9B8D1;
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.buttons-component.style-2 > li > a > svg {
+    display: block;
+    fill: #AF9156;
+    color: #AF9156;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    min-width: 16px;
+    pointer-events: none;
+    width: 1.5em;
+    margin-left: 1rem;
+    margin-right: calc(-0.125em + 0rem);
+    transition: fill 0.25s ease;
+}
+
+.buttons-component.style-2 > li > a > .label {
+    direction: var(--site-language-direction);
+    overflow: hidden;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: left;
+    width: 100%;
+}
+
+.buttons-component.style-2 > li > a:hover {
+    background-color: rgba(255,255,255,0.059) !important;
+    transform: scale(1.0425);
+}
+
+.buttons-component.style-1 {
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.buttons-component.style-1:not(:first-child) {
+    margin-top: 3.5rem !important;
+}
+
+.buttons-component.style-1:not(:last-child) {
+    margin-bottom: 3.5rem !important;
+}
+
+.buttons-component.style-1 > li > a {
+    display: inline-flex;
+    width: auto;
+    height: 4.5rem;
+    line-height: calc(4.5rem - 2px);
+    padding: 0 2.25rem;
+    vertical-align: middle;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    border-radius: 2.5rem;
+    border-color: #AF9156;
+    border-style: solid;
+    border-width: 1px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    background-color: #AF9156;
+    color: #FFE6F9;
+    background-image: linear-gradient(45deg, #607A85 0%, rgba(175,145,86,0.008) 100%);
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    background-size: cover;
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.buttons-component.style-1 > li > a > svg {
+    stroke: #362985; /* couleur de la flèche */
+    fill: none;      /* on s’assure que rien ne remplit l’intérieur */
+    color: #362985;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    width: 1.5em;
+    pointer-events: none;
+    margin-left: 1rem;
+    transition: stroke 0.25s ease;
+}
+
+.buttons-component.style-1 > li > a > .label {
+    direction: var(--site-language-direction);
+    overflow: hidden;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: left;
+    width: 100%;
+}
+
+.buttons-component.style-1 > li > a:hover {
+    background-color: #607A85 !important;
+    transform: scale(1.0425);
+}
+
+.buttons-component.style-2 {
+    gap: 1rem;
+}
+
+.buttons-component.style-2:not(:first-child) {
+    margin-top: 2.625rem !important;
+}
+
+.buttons-component.style-2:not(:last-child) {
+    margin-bottom: 2.625rem !important;
+}
+
+.buttons-component.style-2 > li > a {
+    letter-spacing: 0rem;
+    font-size: 1em;
+}
+
+.buttons-component.style-2 > li > a > svg {
+    width: 1.5em;
+}
+
+.buttons-component.style-1 {
+    gap: 1rem;
+}
+
+.buttons-component.style-1:not(:first-child) {
+    margin-top: 2.625rem !important;
+}
+
+.buttons-component.style-1:not(:last-child) {
+    margin-bottom: 2.625rem !important;
+}
+
+.buttons-component.style-1 > li > a {
+    letter-spacing: 0rem;
+    font-size: 1em;
+}
+
+.buttons-component.style-1 > li > a > svg {
+    width: 1.5em;
+}
+
+@media (max-width: 480px) {
+
+    .buttons-component.style-2 {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .buttons-component.style-2 > li > a {
+        max-width: 32rem;
+        width: 100%;
+    }
+
+    .buttons-component.style-1 {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .buttons-component.style-1 > li > a {
+        max-width: 32rem;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .buttons-component.style-2 {
+        gap: 0.75rem;
+    }
+
+    .buttons-component.style-1 {
+        gap: 0.75rem;
+    }
+
+}

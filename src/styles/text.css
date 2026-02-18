@@ -1,0 +1,358 @@
+spoiler-text {
+        -webkit-text-stroke: 0;
+        background-color: rgba(32,32,32,0.75);
+        text-shadow: none;
+        text-stroke: 0;
+        color: transparent;
+        cursor: pointer;
+        transition: color 0.1s ease-in-out;
+    }
+
+spoiler-text.active {
+    color: #FFFFFF;
+    cursor: text;
+}
+
+.text-component {
+    direction: var(--site-language-direction);
+    position: relative;
+}
+
+.text-component span.p {
+    display: block;
+    position: relative;
+}
+
+.text-component span[style], .text-component strong, .text-component a, .text-component code, .text-component mark, .text-component spoiler-text {
+    -webkit-text-fill-color: currentcolor;
+}
+
+.text-component.style-7 {
+    text-align: left;
+    color: #F2E2C3;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.05rem;
+    width: calc(100% + 0.05rem);
+    font-size: 1.625em;
+    line-height: 1.125;
+    font-weight: 200;
+    background-image: linear-gradient(45deg, #FFD4F6 15%, #F2E2C3 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.01em rgba(255,240,252,0.702);
+    text-stroke: 0.01em rgba(255,240,252,0.702);
+}
+
+.text-component.style-7 mark {
+    background-color: transparent;
+}
+
+.text-component.style-7 a {
+    text-decoration: none;
+}
+
+.text-component.style-7 a:hover {
+    text-decoration: underline;
+}
+
+.text-component.style-7 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+    -webkit-text-fill-color: currentcolor;
+}
+
+.text-component.style-7 span.p {
+    background-image: linear-gradient(45deg, #FFD4F6 15%, #F2E2C3 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.text-component.style-6:not(:first-child) {
+    /* margin-top: 2.5rem !important; */
+}
+
+.text-component.style-6:not(:last-child) {
+    margin-bottom: 2.5rem !important;
+}
+
+.text-component.style-6 {
+    text-align: left;
+    color: rgba(184,186,209,0.812);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.025rem;
+    width: 100%;
+    font-size: 0.875em;
+    line-height: 2.125;
+    font-weight: 300;
+}
+
+.activities-row .text-component.style-6 {
+    text-align: center;
+}
+
+
+
+.text-component.style-6 a {
+    text-decoration: underline;
+}
+
+.text-component.style-6 a:hover {
+    text-decoration: none;
+}
+
+.text-component.style-6 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
+
+.text-component.style-1 {
+    color: #F2E2C3;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.2rem;
+    width: 100%;
+    font-size: 2.375em;
+    line-height: 1.125;
+    font-weight: 200;
+    background-image: linear-gradient(45deg, #FFD4F6 0%, #F2E2C3 47%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.01em rgba(255,240,252,0.702);
+    text-stroke: 0.01em rgba(255,240,252,0.702);
+}
+
+.text-component.style-1 mark {
+    background-color: transparent;
+}
+
+.text-component.style-1 a {
+    text-decoration: none;
+}
+
+.text-component.style-1 a:hover {
+    text-decoration: underline;
+}
+
+.text-component.style-1 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+    -webkit-text-fill-color: currentcolor;
+}
+
+.text-component.style-1 span.p {
+    background-image: linear-gradient(45deg, #FFD4F6 0%, #F2E2C3 47%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.text-component.style-4 {
+    text-align: center;
+    color: #F2E2C3;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.225rem;
+    width: 100%;
+    font-size: 2.375em;
+    line-height: 1.125;
+    font-weight: 100;
+    background-image: linear-gradient(45deg, #FFD4F6 15%, #F2E2C3 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.01em rgba(255,240,252,0.702);
+    text-stroke: 0.01em rgba(255,240,252,0.702);
+}
+
+.text-component.style-4 mark {
+    background-color: transparent;
+}
+
+.text-component.style-4 a {
+    text-decoration: none;
+}
+
+.text-component.style-4 a:hover {
+    text-decoration: underline;
+}
+
+.text-component.style-4 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+    -webkit-text-fill-color: currentcolor;
+}
+
+.text-component.style-4 span.p {
+    background-image: linear-gradient(45deg, #FFD4F6 15%, #F2E2C3 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.text-component.style-5 {
+    text-align: left;
+    color: #B8BAD1;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.375em;
+    line-height: 1.125;
+    font-weight: 300;
+}
+
+.text-component.style-5 mark {
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+.text-component.style-5 a {
+    text-decoration: none;
+}
+
+.text-component.style-5 a:hover {
+    text-decoration: underline;
+}
+
+.text-component.style-5 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
+
+.text-component.style-8:not(:first-child) {
+    margin-top: 2.5rem !important;
+}
+
+.text-component.style-8:not(:last-child) {
+    margin-bottom: 2.5rem !important;
+}
+
+.text-component.style-8 {
+    text-align: left;
+    color: #B8C0C7;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    line-height: 2.125;
+    font-weight: 400;
+}
+
+.text-component.style-8 a {
+    text-decoration: underline;
+}
+
+.text-component.style-8 a:hover {
+    text-decoration: none;
+}
+
+.text-component.style-8 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
+
+.text-component.style-2 {
+    color: #AF9156;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25em;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.text-component.style-2 a {
+    text-decoration: underline;
+}
+
+.text-component.style-2 a:hover {
+    text-decoration: none;
+}
+
+.text-component.style-2 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
+
+.text-component.style-9:not(:first-child) {
+    margin-top: 2.25rem !important;
+}
+
+.text-component.style-9:not(:last-child) {
+    margin-bottom: 2.25rem !important;
+}
+
+.text-component.style-9 {
+    max-width: 65.375rem;
+    margin-left: var(--margin-left);
+    margin-right: var(--margin-right);
+    color: #F2E2C3;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.15rem;
+    width: 100%;
+    font-size: 2.375em;
+    line-height: 1.125;
+    font-weight: 100;
+    background-image: linear-gradient(45deg, #FFD4F6 15%, #F2E2C3 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.01em rgba(255,240,252,0.702);
+    text-stroke: 0.01em rgba(255,240,252,0.702);
+}
+
+    /* Ajustements spécifiques pour "What we do" */
+#text10.style-9 {
+    margin-top: 10rem !important;   /* plus d’espace au-dessus */
+}
+
+.text-component.style-9 mark {
+    background-color: transparent;
+}
+
+.text-component.style-9 a {
+    text-decoration: none;
+}
+
+.text-component.style-9 a:hover {
+    text-decoration: underline;
+}
+
+.text-component.style-9 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+    -webkit-text-fill-color: currentcolor;
+}
+
+.text-component.style-9 span.p {
+    background-image: linear-gradient(45deg, #FFD4F6 15%, #F2E2C3 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.text-component.style-10 {
+    color: #607A85;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75em;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.text-component.style-10 a {
+    text-decoration: underline;
+}
+
+.text-component.style-10 a:hover {
+    text-decoration: none;
+}
+
+.text-component.style-10 span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
+
+.text-component.style-11:not(:first-child) {
+    margin-top: 0.5rem !important;
+}
+
+.text-component.style-11:not(:last-child) {
+    margin-bottom: 0.5rem !important;
+}
+
+.text-component.style-11 {
+    color: #607A85;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125em;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.text-component.style-11 a {
+    text-decoration: underline;
+}
+
+.text-component.style-11 a:hover {
+    text-decoration: none;
+}
+
+.text-component.style-11 span.p:nth-child(n + 2) {
+    margin-top: 0.5rem;
+}
