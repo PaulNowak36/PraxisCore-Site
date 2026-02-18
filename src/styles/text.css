@@ -356,3 +356,151 @@ spoiler-text.active {
 .text-component.style-11 span.p:nth-child(n + 2) {
     margin-top: 0.5rem;
 }
+
+@media (max-width: 736px) {
+
+    .text-component.style-7 {
+        letter-spacing: 0.04375rem;
+        width: calc(100% + 0.04375rem);
+        font-size: 1.625em;
+        line-height: 1.125;
+    }
+
+    .text-component.style-6:not(:first-child) {
+        margin-top: 1.875rem !important;
+    }
+
+    .text-component.style-6:not(:last-child) {
+        margin-bottom: 1.875rem !important;
+    }
+
+    .text-component.style-6 {
+        letter-spacing: -0.021875rem;
+        width: 100%;
+        font-size: 0.875em;
+        line-height: 2.125;
+    }
+
+    .text-component.style-1 {
+        letter-spacing: -0.175rem;
+        width: 100%;
+        font-size: 2.375em;
+        line-height: 1.125;
+    }
+
+    .text-component.style-4 {
+        letter-spacing: -0.196875rem;
+        width: 100%;
+        font-size: 2.375em;
+        line-height: 1.125;
+    }
+
+    .text-component.style-5 {
+        letter-spacing: 0rem;
+        width: 100%;
+        font-size: 1.375em;
+        line-height: 1.125;
+    }
+
+    .text-component.style-8:not(:first-child) {
+        margin-top: 1.875rem !important;
+    }
+
+    .text-component.style-8:not(:last-child) {
+        margin-bottom: 1.875rem !important;
+    }
+
+    .text-component.style-8 {
+        letter-spacing: 0rem;
+        width: 100%;
+        font-size: 0.75em;
+        line-height: 2.125;
+    }
+
+    .text-component.style-2 {
+        letter-spacing: 0rem;
+        width: 100%;
+        font-size: 1.25em;
+        line-height: 2;
+    }
+
+    .text-component.style-9:not(:first-child) {
+        margin-top: 1.6875rem !important;
+    }
+
+    .text-component.style-9:not(:last-child) {
+        margin-bottom: 1.6875rem !important;
+    }
+
+    .text-component.style-9 {
+        letter-spacing: -0.13125rem;
+        width: 100%;
+        font-size: 2.375em;
+        line-height: 1.125;
+    }
+
+    .text-component.style-10 {
+        letter-spacing: 0rem;
+        width: 100%;
+        font-size: 1.75em;
+        line-height: 2;
+    }
+
+    .text-component.style-11:not(:first-child) {
+        margin-top: 0.375rem !important;
+    }
+
+    .text-component.style-11:not(:last-child) {
+        margin-bottom: 0.375rem !important;
+    }
+
+    .text-component.style-11 {
+        letter-spacing: 0rem;
+        width: 100%;
+        font-size: 1.125em;
+        line-height: 2;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .text-component.style-7 {
+        font-size: 1.5em;
+    }
+
+    .text-component.style-6 {
+        font-size: 0.875em;
+    }
+
+    .text-component.style-1 {
+        font-size: 2em;
+    }
+
+    .text-component.style-4 {
+        font-size: 2em;
+    }
+
+    .text-component.style-5 {
+        font-size: 1.375em;
+    }
+
+    .text-component.style-8 {
+        font-size: 0.75em;
+    }
+
+    .text-component.style-2 {
+        font-size: 1.25em;
+    }
+
+    .text-component.style-9 {
+        font-size: 2em;
+    }
+
+    .text-component.style-10 {
+        font-size: 1.5em;
+    }
+
+    .text-component.style-11 {
+        font-size: 1.125em;
+    }
+}
