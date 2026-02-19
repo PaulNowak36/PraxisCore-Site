@@ -1,3 +1,15 @@
+// TAILLE DE l'écran
+function printSizes() {
+  console.log("Viewport :", window.innerWidth, "x", window.innerHeight);
+  console.log("Écran :", screen.width, "x", screen.height);
+}
+
+printSizes();
+
+window.addEventListener("resize", printSizes);
+
+
+
 // OUVERTURE DES MODALS
 
 function openIntroModal(event) {

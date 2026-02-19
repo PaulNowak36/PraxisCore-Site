@@ -648,6 +648,14 @@
     margin: 0.5rem 2rem;
 }
 
+@media (max-width: 1300px) {
+
+    .container-component.style-12 {
+        padding: 0.3rem; /* pas de margin/padding haut/bas */
+
+    }
+}
+
 @media (max-width: 980px) {
 
     .container-component.style-2.columns > .wrapper > .inner > .full > .full:first-child:last-child.image img {
