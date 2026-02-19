@@ -37,9 +37,25 @@
     transition: opacity 0.2s ease;
 }
 
+/* Dernier élément — taille limitée sur tous les écrans */
+.nav-last {
+    max-width: 60px;      /* limite la largeur */
+    height: 40px;         /* hauteur stable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    flex-shrink: 0; /* ne se réduit jamais */
+    margin-left: 1rem;
+}
+
 .nav-links li {
     flex: 1 1 auto;      /* permet aux items de se répartir */
-    min-width: 120px;    /* empêche qu’ils deviennent trop petits */
+    min-width: 100px;    /* empêche qu’ils deviennent trop petits */
     text-align: center;  /* centre le texte dans chaque item */
 }
 
@@ -51,14 +67,18 @@
     opacity: 0.5;
 }
 
-@media (max-width: 1300px) {
+/* Dernier élément fixé à droite */
+
+@media (max-width: 1400px) {
 
     .nav-links {
         padding: 0.2rem 0.5rem; /* pas de margin/padding haut/bas */
-        gap: 20px;
+        row-gap: 0px;
         justify-content: center; /* centre chaque ligne */
+    }
 
-
+    .nav-last {
+        margin-right: 1rem; /* juste l'espacement mobile */
     }
 }
 
@@ -66,31 +86,68 @@
 /* Responsive */
 @media (max-width: 900px) {
     .nav-links {
-        gap: 20px;
+        row-gap: 0px;
         justify-content: center;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 735px) {
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .nav-links {
         display: flex;
-        flex-wrap: nowrap; /* plus de multi-lignes */
-        overflow-x: auto;  /* scroll horizontal */
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE */
-        justify-content: flex-start; /* <-- essentiel */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        justify-content: flex-start;
 
+        /* Fade droite (déjà présent) */
+        position: relative;
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        transition: mask-image 0.3s ease, -webkit-mask-image 0.3s ease;      
+
+    }
+
+    /* Fade gauche + droite */
+    .nav-links.fade-left {
+        mask-image: linear-gradient(to right,
+            transparent 0%, black 15%, black 85%, transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(to right,
+            transparent 0%, black 15%, black 85%, transparent 100%
+        );
+    }
+
+
+    /* Fade droite désactivé  */
+    .nav-links.no-fade-right {
+        mask-image: linear-gradient(to right,
+            transparent 0%, black 15%, black 100%, black 100%
+        );
+        -webkit-mask-image: linear-gradient(to right,
+            transparent 0%, black 15%, black 100%, black 100%
+        );
     }
 
     .nav-links::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        display: none;
     }
 
     .nav-links li {
-        flex: 0 0 auto; /* largeur auto, pas de wrap */
+        flex: 0 0 auto;
+    }
+
+    .nav-last {
+        margin-left: 1rem; /* juste l'espacement mobile */
     }
 }
-
 
 /* Décalage automatique pour éviter que le sticky-nav cache les sections */
 

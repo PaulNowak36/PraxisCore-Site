@@ -4,11 +4,29 @@ function printSizes() {
   console.log("Écran :", screen.width, "x", screen.height);
 }
 
-printSizes();
+// printSizes();
 
 window.addEventListener("resize", printSizes);
 
 
+// Gradient NAV: Detecte la fin du scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector(".nav-links");
+
+    const updateFade = () => {
+        const atStart = nav.scrollLeft <= 0;
+        const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 1;
+
+        // Fade gauche : actif si on n'est PAS au début
+        nav.classList.toggle("fade-left", !atStart);
+
+        // Fade droite : désactivé uniquement si on est à la fin
+        nav.classList.toggle("no-fade-right", atEnd);
+    };
+
+    nav.addEventListener("scroll", updateFade);
+    updateFade();
+});
 
 // OUVERTURE DES MODALS
 
