@@ -1,0 +1,56 @@
+/* Section Activités */
+.activities-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* La rangée de 3 colonnes */
+.activities-row {
+    width: 100%;                     /* prend toute la largeur */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;   /* espace autour de chaque bloc */
+    align-items: flex-start;
+    padding: 2rem 0;                 /* optionnel : respiration verticale */
+}
+
+/* Chaque colonne */
+.activities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;             /* centre horizontalement */
+    text-align: center;              /* centre le texte */
+    max-width: 30%;                  /* ta contrainte stricte */
+    flex: 0 1 30%;                   /* ne dépasse pas 30% */
+}
+
+.activities img {
+    width: 20rem;   
+    height: 14rem;  
+    object-fit: cover;  /* remplit le cadre sans déformation */
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: block;
+    margin: 0 auto 0.6rem auto; /* centre + réduit l’espace avec le texte */
+
+}
+
+@media (max-width: 900px) { 
+
+    .activities-row {
+        align-items: center; 
+        flex-direction: column;
+        gap: 2rem;              
+    }
+
+    .activities {
+        max-width: 100%;     /* la colonne prend toute la largeur */
+        flex: 0 1 100%;      /* empêche la compression */
+        align-items: center; /* centre le contenu */
+        text-align: center;
+    }
+
+
+
+}

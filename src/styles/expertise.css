@@ -1,0 +1,63 @@
+/* Container: Areas of Expertise */
+
+#container-expertise {
+    margin: 4rem 0 8rem 0; /* plus d’espace haut/bas */
+
+}
+
+.expertise-columns {
+    display: flex;
+    justify-content: center; /* centre les 2 colonnes */
+    flex-direction: column;
+    gap: 4rem; /* espace horizontal entre colonnes */
+    
+}
+
+.expertise-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* le vrai space-around vertical */
+}
+
+.expertise-item {
+    display: flex;
+    flex-direction: column;   /* empile image + texte */
+    align-items: center;      /* centre horizontalement */
+    text-align: center;       /* centre le texte */
+    max-width: 20rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25em;
+    color: #AF9156;
+    letter-spacing: 0.02rem;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+.expertise-item img {
+    width: 20rem;   
+    height: 14rem;  
+    object-fit: cover;  /* remplit le cadre sans déformation */
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: block;
+    margin: 0 auto 0.6rem auto; /* centre + réduit l’espace avec le texte */
+
+}
+
+@media (max-width: 1600px) {
+
+    .expertise-columns {
+        display: flex;
+        align-items: center;         /* centre la grosse colonne */
+        
+        flex-direction: column;
+        gap: 2rem; /* espace horizontal entre colonnes */
+        
+    }
+    .expertise-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; /* le vrai space-around vertical */
+        gap: 2rem; /* espace horizontal entre colonnes */
+    }
+}

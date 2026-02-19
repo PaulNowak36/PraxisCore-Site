@@ -3,6 +3,12 @@
 @import url("./text.css");
 @import url("./buttons.css");
 @import url("./image.css");
-@import url("./all.css");
+@import url("./site.css");
 
 @import url("./nav.css");
+@import url("./activities.css");
+@import url("./expertise.css");
+@import url("./founders.css");
+@import url("./partners.css");
+@import url("./modal.css");
+
