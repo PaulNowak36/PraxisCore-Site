@@ -36,7 +36,31 @@
 
 }
 
-@media (max-width: 900px) { 
+@media (max-width: 1100px) and (min-width: 701px) {
+
+    .activities-row {
+        display: flex;
+        flex-wrap: wrap;          /* permet 2 + 1 */
+        justify-content: center;  /* centre les lignes */
+        gap: 2rem;                /* espace propre entre les blocs */
+    }
+
+    .activities {
+        flex: 0 1 45%;            /* 2 colonnes par ligne */
+        max-width: 45%;
+        text-align: center;
+    }
+
+    /* Le 3e élément doit être centré sur sa propre ligne */
+    .activities:nth-child(3) {
+        flex-basis: 100%;         /* force une nouvelle ligne */
+        max-width: 100%;
+        display: flex;
+        justify-content: center;  /* centre l’élément */
+    }
+}
+
+@media (max-width: 700px) { 
 
     .activities-row {
         align-items: center; 

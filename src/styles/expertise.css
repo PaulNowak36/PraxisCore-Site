@@ -44,7 +44,7 @@
 
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 900px) {
 
     .expertise-columns {
         display: flex;
