@@ -640,13 +640,9 @@
     width: calc(33.33333% + (var(--gutters) / 3));
 } 
 
-.container-component.style-12 {
-    padding: 0.5rem; /* pas de margin/padding haut/bas */
-    background-color: #292929;
-    border-radius: 20rem;
-    border: 2px solid #AF9156;
-    margin: 0.5rem 2rem;
-}
+
+
+
 
 @media (max-width: 1300px) {
 
