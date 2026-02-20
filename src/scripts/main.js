@@ -11,21 +11,26 @@ window.addEventListener("resize", printSizes);
 
 // Gradient NAV: Detecte la fin du scroll
 document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector(".nav-links");
+    const hamburger = document.querySelector(".nav-hamburger");
+    const modal = document.querySelector(".nav-modal");
 
-    const updateFade = () => {
-        const atStart = nav.scrollLeft <= 0;
-        const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 1;
+    hamburger.addEventListener("click", () => {
+        modal.classList.add("active");
+    });
 
-        // Fade gauche : actif si on n'est PAS au début
-        nav.classList.toggle("fade-left", !atStart);
+    modal.addEventListener("click", (e) => {
+        // Ferme si on clique en dehors du contenu
+        if (e.target === modal) {
+            modal.classList.remove("active");
+        }
+    });
 
-        // Fade droite : désactivé uniquement si on est à la fin
-        nav.classList.toggle("no-fade-right", atEnd);
-    };
-
-    nav.addEventListener("scroll", updateFade);
-    updateFade();
+    // Ferme le modal quand on clique un lien
+    document.querySelectorAll(".nav-modal-content a").forEach(link => {
+        link.addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+    });
 });
 
 // OUVERTURE DES MODALS

@@ -131,59 +131,68 @@
 
 @media (max-width: 735px) {
 
-    .nav-inner {
-        display: flex;
-        align-items: center;
+    /* Le nav-shell prend toute la largeur */
+    #sticky-nav .nav-shell {
+        width: 100%;
         justify-content: space-between;
+        padding: 0.5rem 1rem;
     }
 
-    .nav-links {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        justify-content: flex-start;
-
-        /* Fade droite (déjà présent) */
-        position: relative;
-        mask-image: linear-gradient(to right, black 85%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-        transition: mask-image 0.3s ease, -webkit-mask-image 0.3s ease;      
-
-    }
-
-    /* Fade gauche + droite */
-    .nav-links.fade-left {
-        mask-image: linear-gradient(to right,
-            transparent 0%, black 15%, black 85%, transparent 100%
-        );
-        -webkit-mask-image: linear-gradient(to right,
-            transparent 0%, black 15%, black 85%, transparent 100%
-        );
-    }
-
-
-    /* Fade droite désactivé  */
-    .nav-links.no-fade-right {
-        mask-image: linear-gradient(to right,
-            transparent 0%, black 15%, black 100%, black 100%
-        );
-        -webkit-mask-image: linear-gradient(to right,
-            transparent 0%, black 15%, black 100%, black 100%
-        );
-    }
-
-    .nav-links::-webkit-scrollbar {
+    /* On cache les liens + la flèche */
+    #sticky-nav .nav-links,
+    #sticky-nav .nav-last {
         display: none;
     }
 
-    .nav-links li {
-        flex: 0 0 auto;
+    /* Icône hamburger */
+    .nav-hamburger {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.6rem;
+        cursor: pointer;
     }
 
-    .nav-last {
-        margin-left: 1rem; /* juste l'espacement mobile */
+    /* Modal */
+    .nav-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(6px);
+        display: none; /* caché par défaut */
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+    }
+
+    .nav-modal.active {
+        display: flex;
+    }
+
+    .nav-modal-content {
+        background: #292929;
+        border: 2px solid #AF9156;
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .nav-modal-content a {
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    .nav-modal-content a:hover {
+        opacity: 0.7;
     }
 }
 
