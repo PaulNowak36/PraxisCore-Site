@@ -105,6 +105,11 @@
     opacity: 0.5;
 }
 
+/* Icône hamburger */
+.nav-hamburger {
+    display: none;
+}
+
 /* Dernier élément fixé à droite */
 
 @media (max-width: 1400px) {
@@ -134,8 +139,9 @@
     /* Le nav-shell prend toute la largeur */
     #sticky-nav .nav-shell {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: 0.5rem 1rem;
+        margin: 0 2.5rem;
     }
 
     /* On cache les liens + la flèche */
@@ -146,6 +152,7 @@
 
     /* Icône hamburger */
     .nav-hamburger {
+        display: block;
         background: none;
         border: none;
         color: white;
