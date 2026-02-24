@@ -160,7 +160,7 @@
         cursor: pointer;
     }
 
-    /* Modal */
+    /* Modal invisible mais présent */
     .nav-modal {
         position: fixed;
         top: 0;
@@ -169,16 +169,25 @@
         height: 100%;
         background: rgba(0,0,0,0.6);
         backdrop-filter: blur(6px);
-        display: none; /* caché par défaut */
+
+        opacity: 0;
+        pointer-events: none;
+
+        display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 99999;
+
+        transition: opacity 0.2s ease;
+        z-index: 99999; /* toujours au premier plan */
     }
 
+    /* Modal visible */
     .nav-modal.active {
-        display: flex;
+        opacity: 1;
+        pointer-events: auto;
     }
 
+    /* Animation du panneau */
     .nav-modal-content {
         background: #292929;
         border: 2px solid #AF9156;
@@ -190,6 +199,15 @@
         width: 80%;
         max-width: 300px;
         text-align: center;
+
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-modal.active .nav-modal-content {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .nav-modal-content a {
