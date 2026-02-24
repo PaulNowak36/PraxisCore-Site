@@ -38,8 +38,8 @@
 
 .image-component.style-3 > .frame {
     width: 100vw;
-    height: 32.5rem;
-    transition: none;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
 .image-component.style-3 > .frame > img {
@@ -108,7 +108,7 @@
     }
 
     .image-component.style-1 > .frame {
-        width: 20rem;
+        width: 25rem;
         height: 6.5625rem !important;
     }
 
@@ -139,6 +139,7 @@
     }
 
     .image-component.style-1 > .frame {
+        width: 20rem;
         height: 5.25rem !important;
     }
 
@@ -155,7 +156,8 @@
     }
 
     .image-component.style-1 > .frame {
-        height: 4.59375rem !important;
+        width: 20rem;
+        height: 5.2rem !important;
     }
 
     .image-component.style-2 > .frame {
