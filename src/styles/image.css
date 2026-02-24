@@ -89,7 +89,11 @@
 @media (max-width: 736px) {
     
     .image-component.style-3 > .frame {
-        height: 37.5rem !important;
+        aspect-ratio: 16 / 9;
+        height: auto !important;
+        width: 100%;
+        overflow: hidden;
+
     }
 
     .image-component.style-3 > .frame > img {
@@ -120,7 +124,10 @@
     }
 
     .image-component.style-2 > .frame {
-        height: 17.8125rem !important;
+        aspect-ratio: 16 / 9; /* ou autre ratio */
+        height: auto !important;
+        width: 100%;
+        overflow: hidden;
     }
 
     .image-component.style-2 > .frame > img {
@@ -134,9 +141,7 @@
 
 @media (max-width: 480px) {
 
-    .image-component.style-3 > .frame {
-        height: 30rem !important;
-    }
+    
 
     .image-component.style-1 > .frame {
         width: 20rem;
@@ -151,10 +156,7 @@
 
 @media (max-width: 360px) {
 
-    .image-component.style-3 > .frame {
-        height: 26.25rem !important;
-    }
-
+    
     .image-component.style-1 > .frame {
         width: 20rem;
         height: 5.2rem !important;
