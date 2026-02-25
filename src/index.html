@@ -14,83 +14,27 @@
 
   </head>
   <body class="is-loading">
+
     <!-- Modal: Request an introduction -->
-    <div id="intro-modal" class="modal-overlay">
-        
-    </div>
+    <div id="intro-modal" class="modal-overlay"></div>
+
     <!-- Modal: Our Services -->
-    <div id="services-modal" class="modal-overlay">
-        
-    </div>
+    <div id="services-modal" class="modal-overlay"></div>
+
     <!-- Modal: Contact -->
-    <div id="contact-modal" class="modal-overlay">
-        
-    </div>
+    <div id="contact-modal" class="modal-overlay"> </div>
+
     <!-- Modal: Request References -->
-    <div id="references-modal" class="modal-overlay">
-        
-    </div>
+    <div id="references-modal" class="modal-overlay"></div>
+
     <!-- Modal: Request a Call -->
-    <div id="call-modal" class="modal-overlay">
-        
-    </div>
+    <div id="call-modal" class="modal-overlay"> </div>
 
     <!-- Modal: Schedule a Call -->
-    <div id="schedule-call-modal" class="modal-overlay">
-        <div class="modal modal-alt">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-
-            <h2 class="modal-title">Schedule a Call</h2>
-
-            <p class="modal-text">
-            Choose a time that works for you. Calls are led by senior operators and last 20–30 minutes.
-            
-            </p>
-
-            <a class="modal-schedule-btn" href="https://calendly.com/your-link" target="_blank">
-            Open scheduling page
-            </a>
-
-            <p class="modal-note">
-            You will be redirected to our scheduling platform (Calendly / Cal.com).
-            </p>
-        </div>
-    </div>
+    <div id="schedule-call-modal" class="modal-overlay"></div>
 
     <!-- Modal: Request a Callback -->
-    <div id="callback-modal" class="modal-overlay">
-        <div class="modal modal-alt2">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-
-            <h2 class="modal-title">Request a Callback</h2>
-
-            <p class="modal-text">
-            Leave your number and we will call you back within 24 hours.
-            </p>
-
-            <form id="callback-form" action="https://formspree.io/f/maqdwzpq" method="POST">
-
-                <!-- Hidden default message -->
-                <input type="hidden" name="context" value="A user wants to contact you from the PraxisCore website.">
-
-                <label class="modal-label">Phone number *</label>
-                <input type="text" name="phone" id="callback-phone" required class="modal-input">
-
-                <label class="modal-label">Preferred time (optional)</label>
-                <input type="text" name="time" class="modal-input">
-
-                <button type="submit" class="modal-submit">Request callback</button>
-            </form>
-
-            <p id="callback-success" class="modal-success">
-            Your callback request has been sent.
-            </p>
-
-            <p id="callback-error" class="modal-error">
-            An error occurred. Please check your phone number.
-            </p>
-        </div>
-    </div>
+    <div id="callback-modal" class="modal-overlay"></div>
 
     {{/*  ARROWS SYMBOLS  */}}
     <svg style="display:none" aria-hidden="true" focusable="false">
@@ -133,52 +77,9 @@
     </svg>
 
     <nav id="sticky-nav" class="container-component style-12"></nav>
-
    
     <!-- Modal mobile -->
-    <div class="nav-modal">
-        <div class="nav-modal-content">
-
-            <details class="modal-item">
-                <summary class="modal-link">
-                    About
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="modal-submenu">
-                    <a href="#container01">Introduction</a>
-                    <a href="#container06">Engagement</a>
-                    <a href="#container04">Our approach</a>
-                </div>
-            </details>
-
-            <details class="modal-item">
-                <summary class="modal-link">
-                    Services
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="modal-submenu">
-                    <a href="#text08">Capabilities</a>
-                    <a href="#container02">References</a>
-                    <a href="#text10">What we do</a>
-                    <a href="#container-expertise">Areas of expertise</a>
-                </div>
-            </details>
-
-            <details class="modal-item">
-                <summary class="modal-link">
-                    Founders & Partners
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="modal-submenu">
-                    <a href="#founders">Founders</a>
-                    <a href="#text32">Partners</a>
-                </div>
-            </details>
-
-            <a href="#container05" class="modal-link no-submenu">Contact us</a>
-
-        </div>
-    </div>
+    <div class="nav-modal"></div>
 
     <div class="site-wrapper">
       <main class="site-main">
