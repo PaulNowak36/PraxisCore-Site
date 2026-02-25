@@ -163,6 +163,125 @@
     opacity: 0.6;
 }
 
+/* ============================
+   Sous-menus mobile (modal)
+   ============================ */
+
+   /* Par défaut : modal totalement désactivé */
+.nav-modal {
+    display: none;
+}
+
+.modal-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    text-align: left;
+    width: 100%;
+    padding: 0.5rem 0;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: opacity 0.2s ease;
+}
+
+.modal-link:hover {
+    opacity: 0.7;
+}
+
+.modal-link i {
+    transition: transform 0.25s ease;
+}
+
+/* ============================
+   Sous-menus mobile (modal)
+   ============================ */
+
+.modal-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Summary = bouton principal */
+.modal-link {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: white;
+    padding: 0.5rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-link::-webkit-details-marker {
+    display: none;
+}
+
+.modal-link i {
+    transition: transform 0.25s ease;
+}
+
+/* Rotation du chevron */
+.modal-item[open] .modal-link i {
+    transform: rotate(180deg);
+}
+
+/* Sous-menu */
+.modal-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+
+    border-left: 2px solid #AF9156;
+
+    animation: fadeSlide 0.25s ease;
+}
+
+.modal-submenu a {
+    color: #e6e6e6;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0.3rem 0;
+}
+
+.modal-submenu a:hover {
+    opacity: 0.6;
+}
+
+/* Animation premium */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact sans sous-menu */
+.no-submenu {
+    padding: 0.5rem 0;
+    display: block;
+}
+
 @media (max-width: 1400px) {
 
     .nav-links {
