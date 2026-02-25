@@ -11,3 +11,8 @@ function includeHTML(selector, file) {
 
 // Appels centralisés
 includeHTML("#sticky-nav", "nav.html");
+includeHTML("#intro-modal", "/modals/intro-modal.html");
+includeHTML("#services-modal", "/modals/service-modal.html");
+includeHTML("#contact-modal", "/modals/contact-modal.html");
+includeHTML("#references-modal", "/modals/references-modal.html");
+includeHTML("#call-modal", "/modals/call-modal.html");
