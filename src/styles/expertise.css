@@ -44,7 +44,41 @@
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) and (min-width: 701px) {
+
+    .expertise-columns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 4rem;
+        justify-items: center;
+    }
+
+    .expertise-col {
+        display: contents;
+    }
+
+    /* Ordre DOM réel :
+       1, 2, 3, 4, 5
+       On force l’ordre visuel :
+       1 2
+       3 4
+       5
+    */
+
+    .expertise-item:nth-of-type(1) { order: 1; }
+    .expertise-item:nth-of-type(2) { order: 2; }
+    .expertise-item:nth-of-type(3) { order: 3; }
+    .expertise-item:nth-of-type(4) { order: 4; }
+    .expertise-item:nth-of-type(5) { order: 5; }
+
+    /* Le dernier item occupe toute la ligne */
+    .expertise-item:nth-of-type(5) {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 700px) {
 
     .expertise-columns {
         display: flex;

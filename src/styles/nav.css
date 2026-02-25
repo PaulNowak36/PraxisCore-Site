@@ -112,6 +112,57 @@
 
 /* Dernier élément fixé à droite */
 
+/* ============================
+   Sous-menus premium PraxisCore
+   ============================ */
+
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%; /* juste sous le lien */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+
+    background: #292929;
+    border: 2px solid #AF9156;
+    border-radius: 1rem;
+
+    padding: 0.8rem 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    min-width: 120px;
+    text-align: center;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 99999;
+}
+
+.has-submenu:hover .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.submenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.submenu a:hover {
+    opacity: 0.6;
+}
+
 @media (max-width: 1400px) {
 
     .nav-links {
@@ -219,12 +270,18 @@
     .nav-modal-content a:hover {
         opacity: 0.7;
     }
+
+    .submenu {
+        display: none !important;
+    }
+
 }
 
 /* Décalage automatique pour éviter que le sticky-nav cache les sections */
 
 #text08,
 #text10,
+#text32,
 #container-expertise,
 #founders,
 #container11,
