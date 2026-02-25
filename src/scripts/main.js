@@ -9,24 +9,29 @@ function printSizes() {
 window.addEventListener("resize", printSizes);
 
 
-// Gradient NAV: Detecte la fin du scroll
-document.addEventListener("DOMContentLoaded", () => {
+includeHTML("#sticky-nav", "nav.html", () => {
+
+    console.log("nav.html chargé");
+
     const hamburger = document.querySelector(".nav-hamburger");
     const modal = document.querySelector(".nav-modal");
+
+    if (!hamburger) {
+        console.error("Hamburger introuvable !");
+        return;
+    }
 
     hamburger.addEventListener("click", () => {
         modal.classList.add("active");
     });
 
     modal.addEventListener("click", (e) => {
-        // Ferme si on clique en dehors du contenu
         if (e.target === modal) {
             modal.classList.remove("active");
         }
     });
 
-    // Ferme le modal quand on clique un lien
-    document.querySelectorAll(".nav-modal-content a").forEach(link => {
+    modal.querySelectorAll(".nav-modal-content a").forEach(link => {
         link.addEventListener("click", () => {
             modal.classList.remove("active");
         });

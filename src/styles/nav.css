@@ -353,6 +353,7 @@
 
     /* Modal visible */
     .nav-modal.active {
+        display: flex;
         opacity: 1;
         pointer-events: auto;
     }
