@@ -54,22 +54,8 @@
     }
 
     .expertise-col {
-        display: contents;
+        display: contents; /* libère les items dans la grille */
     }
-
-    /* Ordre DOM réel :
-       1, 2, 3, 4, 5
-       On force l’ordre visuel :
-       1 2
-       3 4
-       5
-    */
-
-    .expertise-item:nth-of-type(1) { order: 1; }
-    .expertise-item:nth-of-type(2) { order: 2; }
-    .expertise-item:nth-of-type(3) { order: 3; }
-    .expertise-item:nth-of-type(4) { order: 4; }
-    .expertise-item:nth-of-type(5) { order: 5; }
 
     /* Le dernier item occupe toute la ligne */
     .expertise-item:nth-of-type(5) {
