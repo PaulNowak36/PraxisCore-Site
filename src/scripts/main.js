@@ -1,16 +1,28 @@
-// TAILLE DE l'écran
-function printSizes() {
-  console.log("Viewport :", window.innerWidth, "x", window.innerHeight);
-  console.log("Écran :", screen.width, "x", screen.height);
-}
+import {
+  printSizes,
+  closeAllModals,
+  initModalListeners
+} from './all.js';
 
-// printSizes();
+import { includeHTML } from './includes.js';
 
-window.addEventListener("resize", printSizes);
+// Chargement du menu
+includeHTML("#sticky-nav", "nav.html");
 
+// Chargement des modals
+includeHTML("#intro-modal", "/modals/intro-modal.html");
+includeHTML("#services-modal", "/modals/service-modal.html");
+includeHTML("#contact-modal", "/modals/contact-modal.html");
+includeHTML("#references-modal", "/modals/references-modal.html");
+includeHTML("#call-modal", "/modals/call-modal.html");
+includeHTML("#schedule-call-modal", "/modals/schedule-call-modal.html");
+includeHTML("#callback-modal", "/modals/callback-modal.html");
 
+// Chargement du modal mobile
+includeHTML("#nav-modal", "/modals/nav-modal.html");
+
+// Gestion du menu mobile
 includeHTML("#sticky-nav", "nav.html", () => {
-
     console.log("nav.html chargé");
 
     const hamburger = document.querySelector(".nav-hamburger");
@@ -38,185 +50,21 @@ includeHTML("#sticky-nav", "nav.html", () => {
     });
 });
 
-// OUVERTURE DES MODALS
-
-function openIntroModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById("intro-modal");
-    modal.classList.add("active");
-}
-
-function openServicesModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById("services-modal");
-    modal.classList.add("active");
-}
-
-function openContactModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById("contact-modal");
-    modal.classList.add("active");
-}
-
-function openReferencesModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById("references-modal");
-    modal.classList.add("active");
-}
-
-function openCallModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById("call-modal");
-    modal.classList.add("active");
-}
-
-function openScheduleCallModal() {
-    const modal = document.getElementById("schedule-call-modal");
-    modal.classList.add("active");
-}
-
-function openCallbackModal() {
-    const modal = document.getElementById("callback-modal");
-    modal.classList.add("active");
-}
-
-// FERMETURE DES MODALS
-
-function closeAllModals() {
-    const overlays = document.querySelectorAll(".modal-overlay.active");
-    overlays.forEach((overlay) => overlay.classList.remove("active"));
-}
-
-// Close when clicking the X
+// Listener global pour ouvrir les modals
 document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("modal-close")) {
-        closeAllModals();
+    const btn = e.target.closest("[data-modal]");
+    if (!btn) return;
+
+    e.preventDefault();
+
+    const modalId = btn.dataset.modal;
+    const modal = document.getElementById(modalId);
+
+    if (modal) {
+        modal.classList.add("active");
     }
 });
 
-// Close when clicking outside the modal
-document.addEventListener("click", (e) => {
-    const overlays = document.querySelectorAll(".modal-overlay");
-    overlays.forEach((overlay) => {
-        if (e.target === overlay) {
-            closeAllModals();
-        }
-    });
-});
-
-// Close with Escape key
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        closeAllModals();
-    }
-});
-
-
-// GESTION DU FORMULAIRE
-
-const contactForm = document.getElementById("contact-form");
-const contactSuccess = document.getElementById("contact-success");
-const contactError = document.getElementById("contact-error");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        // Reset messages
-        contactSuccess.style.display = "none";
-        contactError.style.display = "none";
-
-        const emailInput = document.getElementById("contact-email");
-        const phoneInput = document.getElementById("contact-phone");
-
-        const email = emailInput.value.trim();
-        const phoneRaw = phoneInput.value.trim();
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        // On retire les espaces
-        const phoneDigits = phoneRaw.replace(/\s+/g, "");
-
-        // Email invalide
-        if (!emailRegex.test(email)) {
-            contactError.textContent = "Please enter a valid email address.";
-            contactError.style.display = "block";
-            emailInput.focus();
-            return;
-        }
-
-        // Téléphone rempli mais invalide
-        if (phoneRaw !== "" && !/^\d{10}$/.test(phoneDigits)) {
-            contactError.textContent = "Phone number must contain exactly 10 digits.";
-            contactError.style.display = "block";
-            phoneInput.focus();
-            return;
-        }
-
-        // Tout est valide → envoi Formspree
-        const formData = new FormData(contactForm);
-        const action = contactForm.getAttribute("action");
-
-        const response = await fetch(action, {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/json" }
-        });
-
-        if (response.ok) {
-            contactForm.reset();
-            contactSuccess.style.display = "block";
-        } else {
-            contactForm.reset();
-            contactError.style.display = "block";
-        }
-    });
-}
-// GESTION DE L'APPEL DE RETOUR
-
-const callbackForm = document.getElementById("callback-form");
-const callbackSuccess = document.getElementById("callback-success");
-const callbackError = document.getElementById("callback-error");
-
-if (callbackForm) {
-    callbackForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        // Reset messages
-        callbackSuccess.style.display = "none";
-        callbackError.style.display = "none";
-
-        const phoneInput = document.getElementById("callback-phone");
-
-        const phoneRaw = phoneInput.value.trim();
-
-        // On retire les espaces du numéro
-        const phoneDigits = phoneRaw.replace(/\s+/g, "");
-
-        // Validation téléphone (obligatoire ou optionnel selon ton besoin)
-        if (!/^\d{10}$/.test(phoneDigits)) {
-            callbackError.textContent = "Phone number must contain exactly 10 digits (spaces allowed).";
-            callbackError.style.display = "block";
-            phoneInput.focus();
-            return;
-        }
-
-        const formData = new FormData(callbackForm);
-        const action = callbackForm.getAttribute("action");
-
-        const response = await fetch(action, {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/json" }
-        });
-
-        if (response.ok) {
-            callbackForm.reset();
-            callbackSuccess.style.display = "block";
-        } else {
-            callbackForm.reset();
-            callbackError.style.display = "block";
-        }
-
-    });
-}
+// Resize + fermeture des modals
+window.addEventListener("resize", printSizes);
+initModalListeners();

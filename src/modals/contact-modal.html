@@ -3,24 +3,25 @@
 
     <h2 class="modal-title">Contact PraxisCore</h2>
 
-    <p class="modal-info">
-        Email: contact@praxiscore.lu<br>
-        Location: Luxembourg
-    </p>
+    <div class="modal-scroll-area">
+        <p class="modal-info">
+            Email: contact@praxiscore.lu&nbsp;&nbsp;&nbsp;Location: Luxembourg
+        </p>
 
-    <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST" novalidate>
-        <label class="modal-label">Email *</label>
-        <input type="email" name="email" id="contact-email" required class="modal-input">
+        <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST" novalidate>
+            <label class="modal-label">Email *</label>
+            <input type="email" name="email" id="contact-email" required class="modal-input">
 
-        <label class="modal-label">Phone (optional)</label>
-        <input type="text" name="phone" id="contact-phone" class="modal-input">
+            <label class="modal-label">Phone (optional)</label>
+            <input type="text" name="phone" id="contact-phone" class="modal-input">
 
-        <label class="modal-label">Message (optional)</label>
-        <textarea name="message" rows="4" class="modal-input"></textarea>
+            <label class="modal-label">Message (optional)</label>
+            <textarea name="message" rows="4" class="modal-input"></textarea>
 
-        <button type="submit" class="modal-submit">Send</button>
-    </form>
+            <button type="submit" class="modal-submit">Send</button>
+        </form>
 
-    <p id="contact-success" class="modal-success">Your message has been sent.</p>
-    <p id="contact-error" class="modal-error">An error occurred. Please check your email or your phone number.</p>
+        <p id="contact-success" class="modal-success">Your message has been sent.</p>
+        <p id="contact-error" class="modal-error">An error occurred. Please check your email or your phone number.</p>
+    </div>
 </div>

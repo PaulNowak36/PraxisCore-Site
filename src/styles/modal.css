@@ -27,8 +27,10 @@
 .modal {
     background: #0F0F0F;
     border: 1px solid rgba(255,255,255,0.08);
-    padding: 2.5rem;
+    padding: 2rem;
     width: min(90%, 32rem);
+    height: 50vh;
+    overflow: auto;
     border-radius: 0.75rem;
     box-shadow: 0 0 40px rgba(0,0,0,0.6);
     position: relative;
@@ -133,13 +135,20 @@
     transition: opacity 0.2s ease;
 }
 
+/* Zone info + formulaire scrollable */
+.modal-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem; /* pour éviter le scroll collé au bord */
+}
+
 .modal-submit:hover {
     opacity: 0.85;
 }
 
 .modal-success {
     display: none;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     color: #C8F7C5;
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
@@ -147,7 +156,7 @@
 
 .modal-error {
     display: none;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     color: #F7C5C5; /* rouge pastel premium */
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;

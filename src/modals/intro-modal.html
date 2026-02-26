@@ -1,14 +1,34 @@
 <div class="modal">
     <button class="modal-close" aria-label="Close modal">&times;</button>
 
-    <h2 class="modal-title">Introduction to PraxisCore</h2>
-    <p class="modal-text">
-        PraxisCore designs, governs and scales high-complexity healthcare systems, starting
-        from clinical reality and operational constraints, and translating them into robust,
-        investable and long-term platforms.
-        <br><br>
-        We partner with investors, healthcare groups and public institutions to structure, launch
-        and operate advanced medical platforms, with a strong focus on nuclear medicine,
-        cardiovascular diagnostics and highly regulated clinical environments.
-    </p>
+    <h2 class="modal-title">Request a Meeting</h2>
+
+    <div class="modal-scroll-area">
+        <p class="modal-info">
+            PraxisCore — Luxembourg<br>
+            We will contact you within 24 hours.
+        </p>
+
+        <form id="intro-contact-form" action="https://formspree.io/f/maqdwzpq" method="POST" novalidate>
+            <label class="modal-label">Full Name *</label>
+            <input type="text" name="name" id="intro-name" required class="modal-input">
+
+            <label class="modal-label">Email *</label>
+            <input type="email" name="email" id="intro-email" required class="modal-input">
+
+            <label class="modal-label">Phone (optional)</label>
+            <input type="text" name="phone" id="intro-phone" class="modal-input">
+
+            <label class="modal-label">Preferred Date (optional)</label>
+            <input type="date" name="preferred_date" class="modal-input">
+
+            <label class="modal-label">Message (optional)</label>
+            <textarea name="message" rows="4" class="modal-input"></textarea>
+
+            <button type="submit" class="modal-submit">Request Meeting</button>
+        </form>
+
+        <p id="intro-success" class="modal-success">Your request has been sent.</p>
+        <p id="intro-error" class="modal-error">An error occurred. Please check your information.</p>
+    </div>
 </div>
