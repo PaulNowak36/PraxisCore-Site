@@ -6,17 +6,28 @@ import {
 
 import { includeHTML } from './includes.js';
 
+import { initIntroductionForm, initContactForm, initCallbackForm } from './form.js';
+
 // Chargement du menu
 includeHTML("#sticky-nav", "nav.html");
 
 // Chargement des modals
 includeHTML("#intro-modal", "/modals/intro-modal.html");
+
+includeHTML("#intro-modal", "/modals/intro-modal.html", () => {
+    initIntroductionForm();
+});
+
 includeHTML("#services-modal", "/modals/service-modal.html");
-includeHTML("#contact-modal", "/modals/contact-modal.html");
+includeHTML("#contact-modal", "/modals/contact-modal.html", () => {
+    initContactForm();
+});
 includeHTML("#references-modal", "/modals/references-modal.html");
 includeHTML("#call-modal", "/modals/call-modal.html");
 includeHTML("#schedule-call-modal", "/modals/schedule-call-modal.html");
-includeHTML("#callback-modal", "/modals/callback-modal.html");
+includeHTML("#callback-modal", "/modals/callback-modal.html", () => {
+    initCallbackForm();
+});
 
 // Chargement du modal mobile
 includeHTML("#nav-modal", "/modals/nav-modal.html");

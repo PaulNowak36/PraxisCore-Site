@@ -135,13 +135,6 @@
     transition: opacity 0.2s ease;
 }
 
-/* Zone info + formulaire scrollable */
-.modal-scroll-area {
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 0.5rem; /* pour éviter le scroll collé au bord */
-}
-
 .modal-submit:hover {
     opacity: 0.85;
 }
