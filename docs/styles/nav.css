@@ -1,0 +1,421 @@
+/* ===========================
+   PraxisCore — Sticky Navigation
+   =========================== */
+
+/* Nouveau style de container */
+
+
+/* Sticky behavior */
+#sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    
+}
+
+/* Structure interne */
+.nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Le container reste full-width mais ne porte plus le style */
+#sticky-nav.container-component.style-12 {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Le bloc visuel interne */
+#sticky-nav .nav-shell {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+
+    background-color: #292929;
+    border-radius: 20rem;
+    border: 2px solid #AF9156;
+    padding: 0.5rem 1rem;
+
+    /* clé : largeur = contenu */
+    width: auto;
+    max-width: none;
+    margin: 0 auto;
+}
+
+/* wrapper et inner restent full-width pour centrer */
+#sticky-nav .wrapper,
+#sticky-nav .inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sticky-nav .nav-links {
+    width: auto;
+    max-width: none;
+    flex-wrap: nowrap; /* évite l’étirement */
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap; /* multi-rows sur mobile */
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0.2rem 0; /* léger padding interne */
+}
+
+/* Style du texte basé sur text-component style-5 */
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+/* Dernier élément — taille limitée sur tous les écrans */
+.nav-last {
+    max-width: 60px;      /* limite la largeur */
+    height: 40px;         /* hauteur stable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    flex-shrink: 0; /* ne se réduit jamais */
+    margin-left: 1rem;
+}
+
+.nav-links li {
+    flex: 1 1 auto;      /* permet aux items de se répartir */
+    min-width: 100px;    /* empêche qu’ils deviennent trop petits */
+    text-align: center;  /* centre le texte dans chaque item */
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.nav-link:active {
+    opacity: 0.5;
+}
+
+/* Icône hamburger */
+.nav-hamburger {
+    display: none;
+}
+
+/* Dernier élément fixé à droite */
+
+/* ============================
+   Sous-menus premium PraxisCore
+   ============================ */
+
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%; /* juste sous le lien */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+
+    background: #292929;
+    border: 2px solid #AF9156;
+    border-radius: 1rem;
+
+    padding: 0.8rem 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    min-width: 120px;
+    text-align: center;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 99999;
+}
+
+.has-submenu:hover .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.submenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.submenu a:hover {
+    opacity: 0.6;
+}
+
+/* ============================
+   Sous-menus mobile (modal)
+   ============================ */
+
+   /* Par défaut : modal totalement désactivé */
+.nav-modal {
+    display: none;
+}
+
+.modal-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    text-align: left;
+    width: 100%;
+    padding: 0.5rem 0;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: opacity 0.2s ease;
+}
+
+.modal-link:hover {
+    opacity: 0.7;
+}
+
+.modal-link i {
+    transition: transform 0.25s ease;
+}
+
+/* ============================
+   Sous-menus mobile (modal)
+   ============================ */
+
+.modal-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Summary = bouton principal */
+.modal-link {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: white;
+    padding: 0.5rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-link::-webkit-details-marker {
+    display: none;
+}
+
+.modal-link i {
+    transition: transform 0.25s ease;
+}
+
+/* Rotation du chevron */
+.modal-item[open] .modal-link i {
+    transform: rotate(180deg);
+}
+
+/* Sous-menu */
+.modal-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+
+    border-left: 2px solid #AF9156;
+
+    animation: fadeSlide 0.25s ease;
+}
+
+.modal-submenu a {
+    color: #e6e6e6;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0.3rem 0;
+}
+
+.modal-submenu a:hover {
+    opacity: 0.6;
+}
+
+/* Animation premium */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact sans sous-menu */
+.no-submenu {
+    padding: 0.5rem 0;
+    display: block;
+}
+
+@media (max-width: 1400px) {
+
+    .nav-links {
+        padding: 0.2rem 0.5rem; /* pas de margin/padding haut/bas */
+        row-gap: 0px;
+        justify-content: center; /* centre chaque ligne */
+    }
+
+    .nav-last {
+        margin-right: 1rem; /* juste l'espacement mobile */
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links {
+        row-gap: 0px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 735px) {
+
+    /* Le nav-shell prend toute la largeur */
+    #sticky-nav .nav-shell {
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0.5rem 1rem;
+        margin: 0 2.5rem;
+    }
+
+    /* On cache les liens + la flèche */
+    #sticky-nav .nav-links,
+    #sticky-nav .nav-last {
+        display: none;
+    }
+
+    /* Icône hamburger */
+    .nav-hamburger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+
+    /* Modal invisible mais présent */
+    .nav-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(6px);
+
+        opacity: 0;
+        pointer-events: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: opacity 0.2s ease;
+        z-index: 99999; /* toujours au premier plan */
+    }
+
+    /* Modal visible */
+    .nav-modal.active {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Animation du panneau */
+    .nav-modal-content {
+        background: #292929;
+        border: 2px solid #AF9156;
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-modal.active .nav-modal-content {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-modal-content a {
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    .nav-modal-content a:hover {
+        opacity: 0.7;
+    }
+
+    .submenu {
+        display: none !important;
+    }
+
+}
+
+/* Décalage automatique pour éviter que le sticky-nav cache les sections */
+
+#text08,
+#text10,
+#text32,
+#container-expertise,
+#founders,
+#container11,
+#container05 {
+    scroll-margin-top: 5rem;
+}
+
+
+#container-expertise, #container11
+{
+    scroll-margin-top: 13rem;
+}
+
+#text31, #container06
+{
+    scroll-margin-top: 15rem;
+}

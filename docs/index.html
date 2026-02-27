@@ -10,198 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400" rel="stylesheet" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
   </head>
   <body class="is-loading">
+
     <!-- Modal: Request an introduction -->
-    <div id="intro-modal" class="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
+    <div id="intro-modal" class="modal-overlay"></div>
 
-            <h2 class="modal-title">Introduction to PraxisCore</h2>
-            <p class="modal-text">
-            PraxisCore designs, governs and scales high-complexity healthcare systems, starting
-            from clinical reality and operational constraints, and translating them into robust,
-            investable and long-term platforms.
-            <br><br>
-            We partner with investors, healthcare groups and public institutions to structure, launch
-            and operate advanced medical platforms, with a strong focus on nuclear medicine,
-            cardiovascular diagnostics and highly regulated clinical environments.
-            </p>
-        </div>
-    </div>
     <!-- Modal: Our Services -->
-    <div id="services-modal" class="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
+    <div id="services-modal" class="modal-overlay"></div>
 
-            <h2 class="modal-title">What we do</h2>
-
-            <p class="modal-text">
-                PraxisCore intervenes across the entire lifecycle of healthcare assets — from strategic conception to long‑term governance.
-            </p>
-
-            <h3 class="modal-subtitle">Core activities</h3>
-            <ul class="modal-list">
-                <li>Healthcare platform design & commissioning</li>
-                <li>Medical governance & operational engineering</li>
-                <li>Board‑level medical and strategic advisory</li>
-                <li>Public–private healthcare structuring (PPP / hybrid models)</li>
-                <li>Selective co‑investment alongside partners</li>
-            </ul>
-
-            <p class="modal-highlight">
-                We do not provide generic consulting.<br>
-                We build systems grounded in real‑world clinical operations.
-            </p>
-        </div>
-    </div>
     <!-- Modal: Contact -->
-    <div id="contact-modal" class="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
+    <div id="contact-modal" class="modal-overlay"> </div>
 
-            <h2 class="modal-title">Contact PraxisCore</h2>
-
-            <p class="modal-info">
-                Email: contact@praxiscore.lu<br>
-                Location: Luxembourg
-            </p>
-
-            <form id="contact-form" action="https://formspree.io/f/maqdwzpq" method="POST" novalidate>
-                <label class="modal-label">Email *</label>
-                <input type="email" name="email" id="contact-email" required class="modal-input">
-
-                <label class="modal-label">Phone (optional)</label>
-                <input type="text" name="phone" id="contact-phone" class="modal-input">
-
-                <label class="modal-label">Message (optional)</label>
-                <textarea name="message" rows="4" class="modal-input"></textarea>
-
-                <button type="submit" class="modal-submit">Send</button>
-            </form>
-
-            <p id="contact-success" class="modal-success">Your message has been sent.</p>
-            <p id="contact-error" class="modal-error">An error occurred. Please check your email or your phone number.</p>
-        </div>
-    </div>
     <!-- Modal: Request References -->
-    <div id="references-modal" class="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
+    <div id="references-modal" class="modal-overlay"></div>
 
-            <h2 class="modal-title">Available References</h2>
-
-            <p class="modal-text">
-            We provide anonymized references covering a range of engagements:
-            governance redesign, throughput engineering, commissioning, and
-            operational turnaround across imaging, specialty care and hospital platforms.
-            <br><br>
-            These references outline the type of missions we lead, the operational
-            challenges addressed, and the measurable outcomes achieved.
-            </p>
-
-            <a id="references-download" class="modal-download" href="./public/references.pdf" download>
-            Download sample references (PDF)
-            </a>
-        </div>
-    </div>
     <!-- Modal: Request a Call -->
-    <div id="call-modal" class="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-
-            <h2 class="modal-title">Request a Call</h2>
-
-            <p class="modal-text">
-            Choose how you would like to connect with a senior operator.
-            </p>
-
-            <div class="modal-call-options">
-
-                <a class="modal-call-btn" href="tel:+33686920417">
-                    <i class="fa-solid fa-phone" style="color: rgba(116, 192, 252, 1);"></i>
-                    Call us now
-                </a>
-
-                <a class="modal-call-btn" href="https://wa.me/33686920417" target="_blank">
-                    <i class="fa-brands fa-whatsapp fa-xl" style="color: rgba(99, 230, 190, 1);"></i>
-                    WhatsApp call
-                </a>
-
-                <a class="modal-call-btn" href="https://signal.me/#p/+333686920417" target="_blank">
-                    <i class="fa-brands fa-signal-messenger fa-lg" style="color: rgba(116, 192, 252, 1);"></i> Signal call
-                </a>
-
-                <div class="modal-call-row">
-                    <button class="modal-call-small modal-call-schedule" onclick="openScheduleCallModal()">
-                        Schedule a call
-                    </button>
-
-                    <button class="modal-call-small modal-call-callback" onclick="openCallbackModal()">
-                        Request a callback
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <div id="call-modal" class="modal-overlay"> </div>
 
     <!-- Modal: Schedule a Call -->
-    <div id="schedule-call-modal" class="modal-overlay">
-        <div class="modal modal-alt">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-
-            <h2 class="modal-title">Schedule a Call</h2>
-
-            <p class="modal-text">
-            Choose a time that works for you. Calls are led by senior operators and last 20–30 minutes.
-            
-            </p>
-
-            <a class="modal-schedule-btn" href="https://calendly.com/your-link" target="_blank">
-            Open scheduling page
-            </a>
-
-            <p class="modal-note">
-            You will be redirected to our scheduling platform (Calendly / Cal.com).
-            </p>
-        </div>
-    </div>
+    <div id="schedule-call-modal" class="modal-overlay"></div>
 
     <!-- Modal: Request a Callback -->
-    <div id="callback-modal" class="modal-overlay">
-        <div class="modal modal-alt2">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-
-            <h2 class="modal-title">Request a Callback</h2>
-
-            <p class="modal-text">
-            Leave your number and we will call you back within 24 hours.
-            </p>
-
-            <form id="callback-form" action="https://formspree.io/f/maqdwzpq" method="POST">
-
-                <!-- Hidden default message -->
-                <input type="hidden" name="context" value="A user wants to contact you from the PraxisCore website.">
-
-                <label class="modal-label">Phone number *</label>
-                <input type="text" name="phone" id="callback-phone" required class="modal-input">
-
-                <label class="modal-label">Preferred time (optional)</label>
-                <input type="text" name="time" class="modal-input">
-
-                <button type="submit" class="modal-submit">Request callback</button>
-            </form>
-
-            <p id="callback-success" class="modal-success">
-            Your callback request has been sent.
-            </p>
-
-            <p id="callback-error" class="modal-error">
-            An error occurred. Please check your phone number.
-            </p>
-        </div>
-    </div>
+    <div id="callback-modal" class="modal-overlay"></div>
 
     {{/*  ARROWS SYMBOLS  */}}
     <svg style="display:none" aria-hidden="true" focusable="false">
@@ -218,6 +51,17 @@
     />
     </symbol>
 
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+        <path
+            d="M12 19V5M6 11l6-6 6 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
     <!-- RIGHT ARROW -->
     <symbol id="icon-arrow-right" viewBox="0 0 24 24">
         <path
@@ -231,6 +75,11 @@
     </symbol>
 
     </svg>
+
+    <nav id="sticky-nav" class="container-component style-12"></nav>
+   
+    <!-- Modal mobile -->
+    <div id="nav-modal" class="nav-modal"></div>
 
     <div class="site-wrapper">
       <main class="site-main">
@@ -262,10 +111,8 @@
 
                     <ul id="buttons03" class="buttons-component instance-3 style-1">
                         <li>
-                            <a href="#" onclick="openIntroModal(event);" class="n01" role="button">
-                                <svg aria-hidden="true" width="24" height="24">
-                                    <use xlink:href="#icon-arrow-down"></use>
-                                </svg>
+                            <a href="#" data-modal="intro-modal" class="n01" role="button">
+                                <i class="fa-regular fa-calendar-plus icon-calendar"></i>
                                 <span class="label">Request an introduction</span>
                             </a>
                         </li>
@@ -274,6 +121,8 @@
                 </div>
             </div>
         </div>
+        <div class="pc-anchor" data-prev="#" data-next="#container06"></div>
+
           <div id="container06" class="container-component instance-6 style-3 columns">
             <div class="wrapper">
                 <div class="inner" data-onvisible-trigger="1">
@@ -283,10 +132,8 @@
                         <p id="text04" class="text-component instance-4 style-6">We design and govern scalable healthcare platforms — combining clinical governance, operational engineering and investor-grade structuring.</p>
                         <ul id="buttons10" class="buttons-component instance-10 style-2">
                             <li>
-                                <a href="#" onclick="openServicesModal(event);" class="n01" role="button">
-                                    <svg aria-hidden="true" width="24" height="24">
-                                        <use xlink:href="#icon-arrow-right"></use>
-                                    </svg>
+                                <a href="#" data-modal="services-modal" class="n01" role="button">
+                                    <i class="fa-solid fa-screwdriver-wrench icon-services"></i>
                                     <span class="label">Our services</span>
                                 </a>
                             </li>
@@ -298,10 +145,8 @@
                         <p id="text07" class="text-component instance-7 style-6">We work with a small number of partners at a time. Missions are led by senior operators — not analysts — with clear deliverables and measurable outcomes.</p>
                         <ul id="buttons02" class="buttons-component instance-2 style-2">
                             <li>
-                                <a href="#" onclick="openContactModal(event);" class="n01" role="button">
-                                    <svg aria-hidden="true" width="24" height="24">
-                                        <use xlink:href="#icon-arrow-right"></use>
-                                    </svg>
+                                <a href="#" data-modal="contact-modal" class="n01" role="button">
+                                    <i class="fa-solid fa-address-book icon-contact"></i>
                                     <span class="label">Contact</span>
                                 </a>
                             </li>
@@ -311,6 +156,7 @@
             </div>
           </div>
           <p id="text17" class="text-component instance-17 style-2">Advisory · Governance · Operational engineering · Vendor-agnostic</p>
+          <div class="pc-anchor" data-prev="#container06" data-next="#container04"></div>
           <div id="container04" class="container-component instance-4 style-2 columns">
             <div class="wrapper">
                 <div class="inner" data-onvisible-trigger="1" data-reorder="1,0" data-reorder-breakpoint="medium">
@@ -334,6 +180,7 @@
                 </div>
             </div>
            </div>
+          <div class="pc-anchor" data-prev="#container04" data-next="#text08"></div>
           <h2 id="text08" class="text-component instance-8 style-9">Capabilities</h2>
           <p id="text20" class="text-component instance-20 style-2">Board-level advisory, grounded in real operations.</p>
           <div id="container03" class="container-component instance-3 style-3 columns">
@@ -361,6 +208,7 @@
                 </div>
             </div>
           </div>
+          <div class="pc-anchor" data-prev="#text08" data-next="#container02"></div>
           <div id="container02" class="container-component instance-2 style-2 columns">
             <div class="wrapper">
                 <div class="inner" data-onvisible-trigger="1">
@@ -374,14 +222,12 @@
                     <div>
                         <h2 id="text46" class="text-component instance-46 style-7">Proof : turning complexity into throughput</h2>
                         <p id="text37" class="text-component instance-37 style-6">
-                            <span class="p">We help complex imaging and specialty-care platforms move from design intent to operational reality.<br> Governance, layout, staffing and KPI cadence — executed with senior operators on the ground.</span>
+                            <span class="p">We help complex imagisng and specialty-care platforms move from design intent to operational reality.<br> Governance, layout, staffing and KPI cadence — executed with senior operators on the ground.</span>
                         </p>
                         <ul id="buttons07" class="buttons-component instance-7 style-2">
                             <li>
-                                <a href="#" onclick="openReferencesModal(event);" class="n01" role="button">
-                                    <svg aria-hidden="true" width="24" height="24">
-                                        <use xlink:href="#icon-arrow-right"></use>
-                                    </svg>
+                                <a href="#" data-modal="references-modal" class="n01" role="button">
+                                    <i class="fa-solid fa-book-atlas icon-references"></i>
                                     <span class="label">Request references</span>
                                 </a>
                             </li>
@@ -393,6 +239,7 @@
           <p id="text21" class="text-component instance-21 style-2">BUILT BY OPERATORS</p>
           <p id="text22" class="text-component instance-22 style-10">Senior clinicians and operators</p>
           <p id="text23" class="text-component instance-23 style-11"><span class="p">We stay involved end-to-end: governance, commissioning and operational performance.</span><span class="p">France-based. International engagements.</span></p>
+          <div class="pc-anchor" data-prev="#container02" data-next="#text10"></div>
           <h2 id="text10" class="text-component instance-10 style-9">What we do</h2>
           <div class="activities-section">
                 <div class="activities-row">
@@ -415,6 +262,7 @@
                     </div>
                 </div>
             </div>
+            <div class="pc-anchor" data-prev="#text10" data-next="#container-expertise"></div>
           <h2 id="text10" class="text-component instance-10 style-9">Areas of expertise</h2>
          <section id="container-expertise" class="container-component">
             <div class="wrapper">
@@ -450,6 +298,7 @@
                 </div>
             </div>
         </section>
+        <div class="pc-anchor" data-prev="#container-expertise" data-next="#founders"></div>
         <section id="founders" class="founders-section">
 
                 <h2 class="founders-title">FOUNDERS</h2>
@@ -477,6 +326,7 @@
                 </div>
 
         </section>
+        <div class="pc-anchor" data-prev="#founders" data-next="#text32"></div>
           <h2 id="text32" class="text-component instance-32 style-1">Partners</h2>
             <div id="container11" class="container-component instance-11 style-2 columns">
                 <div class="wrapper">
@@ -511,6 +361,7 @@
                     </div>
                 </div>
             </div>
+            <div class="pc-anchor" data-prev="#text32" data-next="#container05"></div>
           <div id="container05" class="container-component instance-5 style-4 default full screen">
             <div class="wrapper">
                 <div class="inner" data-onvisible-trigger="1">
@@ -518,10 +369,8 @@
                     <p id="text25" class="text-component instance-25 style-2">Tell us the context — we reply with a clear scope and next steps.</p>
                     <ul id="buttons01" class="buttons-component instance-1 style-1">
                         <li>
-                            <a href="#" onclick="openCallModal(event);" class="n01" role="button">
-                                <svg aria-hidden="true" width="24" height="24">
-                                    <use xlink:href="#icon-arrow-right"></use>
-                                </svg>
+                            <a href="#" data-modal="call-modal" class="n01" role="button">
+                                <i class="fa-solid fa-phone icon-call"></i>
                                 <span class="label">Request a call</span>
                             </a>
                         </li>
@@ -533,6 +382,6 @@
       </main>
     </div>
 
-    <script src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

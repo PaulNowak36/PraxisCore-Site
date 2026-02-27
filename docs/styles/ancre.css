@@ -1,0 +1,67 @@
+/* ============================
+   PraxisCore — Anchor Premium
+   ============================ */
+
+.pc-anchor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.pc-anchor-btn {
+    background: #292929;
+    border: 2px solid #AF9156;
+    color: white;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    font-size: 1.2rem;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pc-anchor-btn:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+.pc-anchor-btn:active {
+    opacity: 0.5;
+    transform: translateY(0);
+}
+
+.pc-anchor-divider {
+    width: 2px;
+    height: 32px;
+    background: #AF9156;
+    margin: 0 1rem;
+    border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 735px) {
+    .pc-anchor {
+        margin: 2rem 0;
+    }
+
+    .pc-anchor-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .pc-anchor-divider {
+        height: 26px;
+    }
+}
+
+#container-expertise
+{
+    scroll-margin-top: 13rem;
+}

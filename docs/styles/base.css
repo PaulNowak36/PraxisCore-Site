@@ -65,6 +65,9 @@ table {
 
 html {
     font-size: 15pt;
+    scroll-behavior: smooth;
+
+
 }
 
 /* BODY */
