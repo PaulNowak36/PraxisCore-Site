@@ -8,6 +8,8 @@ import { includeHTML } from './includes.js';
 
 import { initIntroductionForm, initContactForm, initCallbackForm } from './form.js';
 
+import { initAnchors } from "./anchors.js";
+
 // Chargement du menu
 includeHTML("#sticky-nav", "nav.html");
 
@@ -59,6 +61,12 @@ includeHTML("#sticky-nav", "nav.html", () => {
             modal.classList.remove("active");
         });
     });
+});
+
+// Chargement des ancres
+// Chargement des ancres
+includeHTML(".pc-anchor", "ancre.html", () => {
+    initAnchors();
 });
 
 // Listener global pour ouvrir les modals
