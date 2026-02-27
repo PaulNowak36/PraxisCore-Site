@@ -5,7 +5,7 @@ export function initIntroductionForm() {
     if (!introForm) return;
 
     const introSuccess = document.getElementById("intro-success");
-    const introError = document.getElementById("intro-error");
+    const introErrorGlobal = document.getElementById("intro-error");
 
     const dateInput = document.getElementById("intro-date");
     const timeInput = document.getElementById("intro-time");
@@ -23,25 +23,38 @@ export function initIntroductionForm() {
         dateInput.min = today;
     }
 
+    // --- Gestion des erreurs par champ ---
+    function clearFieldErrors() {
+        introForm.querySelectorAll(".modal-error.field").forEach(el => el.remove());
+    }
+
+    function showFieldError(input, message) {
+        const error = document.createElement("p");
+        error.className = "modal-error field";
+        error.style.display = "block";
+        error.textContent = message;
+        input.insertAdjacentElement("afterend", error);
+    }
+
     // --- Activation / désactivation du bouton ---
     function updateSubmitState() {
         const nameFilled = nameInput.value.trim().length > 0;
         const emailFilled = emailInput.value.trim().length > 0;
-
         submitBtn.disabled = !(nameFilled && emailFilled);
     }
 
     nameInput.addEventListener("input", updateSubmitState);
     emailInput.addEventListener("input", updateSubmitState);
 
-    updateSubmitState(); // état initial
+    updateSubmitState();
 
     // --- Soumission du formulaire ---
     introForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         introSuccess.style.display = "none";
-        introError.style.display = "none";
+        introErrorGlobal.style.display = "none";
+        clearFieldErrors();
 
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
@@ -50,24 +63,21 @@ export function initIntroductionForm() {
 
         // Validation nom
         if (name.length < 2) {
-            introError.textContent = "Please enter your full name.";
-            introError.style.display = "block";
+            showFieldError(nameInput, "Please enter your full name.");
             nameInput.focus();
             return;
         }
 
         // Validation email
         if (!emailRegex.test(email)) {
-            introError.textContent = "Please enter a valid email address.";
-            introError.style.display = "block";
+            showFieldError(emailInput, "Please enter a valid email address.");
             emailInput.focus();
             return;
         }
 
         // Validation téléphone
         if (phoneRaw !== "" && !/^\d{10}$/.test(phoneDigits)) {
-            introError.textContent = "Phone number must contain exactly 10 digits.";
-            introError.style.display = "block";
+            showFieldError(phoneInput, "Phone number must contain exactly 10 digits.");
             phoneInput.focus();
             return;
         }
@@ -80,8 +90,7 @@ export function initIntroductionForm() {
             const selectedDate = dateInput.value;
 
             if (selectedDate < todayDate) {
-                introError.textContent = "Please choose a valid date (today or later).";
-                introError.style.display = "block";
+                showFieldError(dateInput, "Please choose a valid date (today or later).");
                 dateInput.focus();
                 return;
             }
@@ -92,8 +101,7 @@ export function initIntroductionForm() {
                 const nowTime = today.getHours() * 60 + today.getMinutes();
 
                 if (selectedTime < nowTime) {
-                    introError.textContent = "Please choose a valid time (later today).";
-                    introError.style.display = "block";
+                    showFieldError(timeInput, "Please choose a valid time (later today).");
                     timeInput.focus();
                     return;
                 }
@@ -101,8 +109,7 @@ export function initIntroductionForm() {
         }
 
         if (timeInput && timeInput.value && (!dateInput || !dateInput.value)) {
-            introError.textContent = "Please choose a date before selecting a time.";
-            introError.style.display = "block";
+            showFieldError(dateInput, "Please choose a date before selecting a time.");
             dateInput.focus();
             return;
         }
@@ -123,10 +130,10 @@ export function initIntroductionForm() {
             introSuccess.style.display = "block";
         } else {
             introForm.reset();
-            introError.style.display = "block";
+            introErrorGlobal.style.display = "block";
         }
 
-        updateSubmitState(); // réapplique l'état après reset
+        updateSubmitState();
     });
 }
 
@@ -135,10 +142,23 @@ export function initContactForm() {
     if (!contactForm) return;
 
     const contactSuccess = document.getElementById("contact-success");
-    const contactError = document.getElementById("contact-error");
+    const contactErrorGlobal = document.getElementById("contact-error");
 
     const emailInput = document.getElementById("contact-email");
     const submitBtn = contactForm.querySelector(".modal-submit");
+
+    // --- Gestion des erreurs par champ ---
+    function clearFieldErrors() {
+        contactForm.querySelectorAll(".modal-error.field").forEach(el => el.remove());
+    }
+
+    function showFieldError(input, message) {
+        const error = document.createElement("p");
+        error.className = "modal-error field";
+        error.style.display = "block";
+        error.textContent = message;
+        input.insertAdjacentElement("afterend", error);
+    }
 
      // --- Activation / désactivation du bouton ---
     function updateSubmitState() {
@@ -155,8 +175,8 @@ export function initContactForm() {
         e.preventDefault();
 
         contactSuccess.style.display = "none";
-        contactError.style.display = "none";
-
+        contactErrorGlobal.style.display = "none";
+        clearFieldErrors();
         
         const phoneInput = document.getElementById("contact-phone");
 
@@ -167,15 +187,13 @@ export function initContactForm() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(email)) {
-            contactError.textContent = "Please enter a valid email address.";
-            contactError.style.display = "block";
+            showFieldError(emailInput, "Please enter a valid email address.");
             emailInput.focus();
             return;
         }
 
         if (phoneRaw !== "" && !/^\d{10}$/.test(phoneDigits)) {
-            contactError.textContent = "Phone number must contain exactly 10 digits.";
-            contactError.style.display = "block";
+            showFieldError(phoneInput, "Phone number must contain exactly 10 digits.");
             phoneInput.focus();
             return;
         }
@@ -195,7 +213,7 @@ export function initContactForm() {
             contactSuccess.style.display = "block";
         } else {
             contactForm.reset();
-            contactError.style.display = "block";
+            contactErrorGlobal.style.display = "block";
         }
 
         updateSubmitState(); // réapplique l'état après reset
@@ -207,7 +225,7 @@ export function initCallbackForm() {
     if (!callbackForm) return;
 
     const callbackSuccess = document.getElementById("callback-success");
-    const callbackError = document.getElementById("callback-error");
+    const callbackErrorGlobal = document.getElementById("callback-error");
 
     const phoneInput = document.getElementById("callback-phone");
     const dateInput = document.getElementById("callback-date");
@@ -219,6 +237,19 @@ export function initCallbackForm() {
     if (dateInput) {
         const today = new Date().toISOString().split("T")[0];
         dateInput.min = today;
+    }
+
+    // --- Gestion des erreurs par champ ---
+    function clearFieldErrors() {
+        callbackForm.querySelectorAll(".modal-error.field").forEach(el => el.remove());
+    }
+
+    function showFieldError(input, message) {
+        const error = document.createElement("p");
+        error.className = "modal-error field";
+        error.style.display = "block";
+        error.textContent = message;
+        input.insertAdjacentElement("afterend", error);
     }
 
      // --- Activation / désactivation du bouton ---
@@ -236,15 +267,15 @@ export function initCallbackForm() {
         e.preventDefault();
 
         callbackSuccess.style.display = "none";
-        callbackError.style.display = "none";
+        callbackErrorGlobal.style.display = "none";
+        clearFieldErrors();
 
         
         const phoneRaw = phoneInput.value.trim();
         const phoneDigits = phoneRaw.replace(/\s+/g, "");
 
         if (!/^\d{10}$/.test(phoneDigits)) {
-            callbackError.textContent = "Phone number must contain exactly 10 digits (spaces allowed).";
-            callbackError.style.display = "block";
+            showFieldError(phoneInput, "Phone number must contain exactly 10 digits (spaces allowed).");
             phoneInput.focus();
             return;
         }
@@ -257,8 +288,7 @@ export function initCallbackForm() {
             const selectedDate = dateInput.value;
 
             if (selectedDate < todayDate) {
-                callbackError.textContent = "Please choose a valid date (today or later).";
-                callbackError.style.display = "block";
+                showFieldError(dateInput, "Please choose a valid date (today or later).");
                 dateInput.focus();
                 return;
             }
@@ -269,8 +299,7 @@ export function initCallbackForm() {
                 const nowTime = today.getHours() * 60 + today.getMinutes();
 
                 if (selectedTime < nowTime) {
-                    callbackError.textContent = "Please choose a valid time (later today).";
-                    callbackError.style.display = "block";
+                    showFieldError(timeInput, "Please choose a valid time (later today).");
                     timeInput.focus();
                     return;
                 }
@@ -278,8 +307,7 @@ export function initCallbackForm() {
         }
 
         if (timeInput && timeInput.value && (!dateInput || !dateInput.value)) {
-            callbackError.textContent = "Please choose a date before selecting a time.";
-            callbackError.style.display = "block";
+            showFieldError(dateInput, "Please choose a date before selecting a time.");
             dateInput.focus();
             return;
         }
@@ -299,7 +327,7 @@ export function initCallbackForm() {
             callbackSuccess.style.display = "block";
         } else {
             callbackForm.reset();
-            callbackError.style.display = "block";
+            callbackErrorGlobal.style.display = "block";
         }
 
         updateSubmitState(); // réapplique l'état après reset
