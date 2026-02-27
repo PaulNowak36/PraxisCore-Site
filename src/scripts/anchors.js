@@ -11,7 +11,6 @@ export function initAnchors() {
         if (prev) up.href = prev;
         if (next) down.href = next;
 
-        // Smooth scroll premium
         [up, down].forEach(btn => {
             btn.addEventListener("click", (e) => {
                 const target = btn.getAttribute("href");
@@ -22,7 +21,7 @@ export function initAnchors() {
                 const el = document.querySelector(target);
                 if (!el) return;
 
-                const offset = getStickyOffset();
+                const offset = getOffsetFor(target);
                 const top = el.getBoundingClientRect().top + window.scrollY - offset;
 
                 window.scrollTo({
@@ -34,8 +33,17 @@ export function initAnchors() {
     });
 }
 
-function getStickyOffset() {
+function getOffsetFor(target) {
     const nav = document.querySelector("#sticky-nav");
-    if (!nav) return 0;
-    return nav.offsetHeight + 20;
+    const base = nav ? nav.offsetHeight + 20 : 0;
+
+    // Offsets personnalisés par section
+    const customOffsets = {
+        "#container-expertise": base + 80,
+        "#container11": base + 40,
+        "#container06": base + 50,
+        "#text31": base + 50
+    };
+
+    return customOffsets[target] || base;
 }

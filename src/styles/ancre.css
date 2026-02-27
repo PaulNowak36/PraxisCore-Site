@@ -60,3 +60,8 @@
         height: 26px;
     }
 }
+
+#container-expertise
+{
+    scroll-margin-top: 13rem;
+}
