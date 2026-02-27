@@ -184,13 +184,39 @@
     margin-bottom: 2.625rem !important;
 }
 
-.buttons-component.style-1 > li > a {
-    letter-spacing: 0rem;
-    font-size: 1em;
+/* Icône Font Awesome dans les boutons style-1 */
+.buttons-component.style-1 > li > a > i.icon-calendar,
+.buttons-component.style-1 > li > a > i.icon-call {
+    color: #362985;      /* même couleur que la flèche */
+    font-size: 1.5em;    /* même taille que ton svg */
+    margin-left: 1rem;   /* même espacement */
+    flex-shrink: 0;
+    transition: color 0.25s ease;
 }
 
-.buttons-component.style-1 > li > a > svg {
-    width: 1.5em;
+/* Hover premium */
+.buttons-component.style-1 > li > a:hover > i.icon-calendar,
+.buttons-component.style-1 > li > a:hover > i.icon-call{
+    color: #FFE6F9; /* même comportement que ton texte */
+}
+
+/* Icônes Font Awesome dans les boutons style-2 */
+.buttons-component.style-2 > li > a > i.icon-services,
+.buttons-component.style-2 > li > a > i.icon-contact,
+.buttons-component.style-2 > li > a > i.icon-references  {
+    color: #362985;      /* même couleur que la flèche */
+    font-size: 1.5em;    /* même taille que ton svg */
+    margin-left: 1rem;   /* même espacement */
+    flex-shrink: 0;
+    transition: color 0.25s ease;
+}
+
+
+/* Hover premium */
+.buttons-component.style-2 > li > a:hover > i.icon-services,
+.buttons-component.style-2 > li > a:hover > i.icon-contact, 
+.buttons-component.style-2 > li > a:hover > i.icon-references{
+    color: #FFE6F9; /* même comportement que ton texte */
 }
 
 @media (max-width: 480px) {
