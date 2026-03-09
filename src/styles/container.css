@@ -345,6 +345,7 @@
     --gutters: calc(var(--padding-horizontal) * 2);
     --spacing: 2.5rem;
     padding: var(--padding-vertical) var(--padding-horizontal);
+    
     border-radius: calc(1rem - 1px);
 }
 
@@ -678,11 +679,12 @@
     }
 
     .container-component.style-2.columns > .wrapper > .inner > * {
-        padding: calc(var(--gutters) * 0.5) 0 !important;
+        padding: 0 !important;
     }
 
     .container-component.style-2.columns > .wrapper > .inner > *:last-child {
         padding-bottom: 0 !important;
+        padding-top: 0 !important;
     }
 
     .container-component.style-2.columns > .wrapper > .inner > div > .full {
