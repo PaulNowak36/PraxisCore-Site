@@ -80,6 +80,16 @@ body {
     word-wrap: break-word;
     background-color: #F7F8FC;
     -webkit-text-size-adjust: none;
+    
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overscroll-behavior-y: none; /* empêche tout scroll au-delà du contenu */
 }
 
 body::before {
@@ -124,6 +134,8 @@ body.is-loading::after {
     opacity: 1;
     visibility: visible;
 }
+
+
 
 /* INLINE ELEMENTS */
 
