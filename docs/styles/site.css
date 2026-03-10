@@ -63,8 +63,6 @@
         width: var(--width);
         z-index: 1;
         padding: var(--padding-vertical) var(--padding-horizontal);
-        padding-bottom: 0 !important;
-
     }
 
     .site-main > .inner > * {
@@ -80,8 +78,6 @@
     .site-main > .inner > :last-child {
         margin-bottom: 0 !important;
     }
-
-    
 
     .site-main > .inner > .full {
         margin-left: calc(var(--padding-horizontal) * -1);
