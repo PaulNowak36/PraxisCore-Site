@@ -84,14 +84,6 @@ body {
 
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overscroll-behavior-y: none; /* empêche tout scroll au-delà du contenu */
-}
-
 body::before {
     content: '';
     display: block;
