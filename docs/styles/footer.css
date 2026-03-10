@@ -1,0 +1,59 @@
+/* Aucune marge sous le footer */
+footer,
+#footer01 {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+
+/* Footer container: remove vertical spacing */
+#footer01.container-component {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-height: auto;
+}
+
+/* Inner: extremely compact, 95% height usage */
+#footer01 .inner.legal-footer {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0; /* ultra compact */
+}
+
+/* Reduce spacing between elements */
+.legal-footer h3 {
+    margin: 0 0 0.25rem 0;
+}
+
+.legal-footer p {
+   margin: 0.05rem 0;
+   margin-top: 0.25rem !important;
+   margin-bottom: 0.25rem !important;
+}
+
+
+/* Smaller text (style-0) + gold or white color */
+.legal-small {
+    font-size: 0.70rem; /* encore plus petit */
+    line-height: 1.;
+    opacity: 0.85;
+    color: #ffffff; /* or replace with var(--gold) */
+}
+
+/* Narrower layout */
+.legal-footer {
+    max-width: 28%; /* encore plus étroit */
+    margin: 0 auto;
+}
+
+/* Mobile: full width */
+@media (max-width: 768px) {
+    .legal-footer {
+        max-width: 100%;
+    }
+}

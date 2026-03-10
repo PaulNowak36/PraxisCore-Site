@@ -91,21 +91,16 @@
     }
 }
 
+@media (max-width: 980px) {
+    .image-component.style-3.full {
+        display: none !important;
+    }
+}
+
 @media (max-width: 736px) {
     
-    .image-component.style-3 > .frame {
-        aspect-ratio: 16 / 9;
-        width: 100%;
-        overflow: hidden;
-    }
+    
 
-
-    .image-component.style-3 > .frame > img {
-        height: 100% !important;
-        object-fit: cover;
-        object-position: top;
-        width: 100% !important;
-    }
 
     .image-component.style-1:not(:first-child) {
         margin-top: 1.78125rem !important;

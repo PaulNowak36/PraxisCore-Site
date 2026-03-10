@@ -345,6 +345,7 @@
     --gutters: calc(var(--padding-horizontal) * 2);
     --spacing: 2.5rem;
     padding: var(--padding-vertical) var(--padding-horizontal);
+    
     border-radius: calc(1rem - 1px);
 }
 
@@ -678,11 +679,12 @@
     }
 
     .container-component.style-2.columns > .wrapper > .inner > * {
-        padding: calc(var(--gutters) * 0.5) 0 !important;
+        padding: 0 !important;
     }
 
     .container-component.style-2.columns > .wrapper > .inner > *:last-child {
         padding-bottom: 0 !important;
+        padding-top: 0 !important;
     }
 
     .container-component.style-2.columns > .wrapper > .inner > div > .full {
@@ -752,6 +754,27 @@
         min-height: auto;
     }
 
+    /* On force le layout en 2 colonnes */
+    #container11 .inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Chaque bloc prend 50% pour faire 2 colonnes */
+    #container11 .partner-block {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+
+    /* Le dernier bloc (Public Institutions) doit être centré sur sa ligne */
+    #container11 .partner-block:last-child {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
 
 
 
