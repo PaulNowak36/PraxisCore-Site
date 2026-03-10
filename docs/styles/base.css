@@ -80,6 +80,8 @@ body {
     word-wrap: break-word;
     background-color: #F7F8FC;
     -webkit-text-size-adjust: none;
+    
+
 }
 
 body::before {
@@ -124,6 +126,8 @@ body.is-loading::after {
     opacity: 1;
     visibility: visible;
 }
+
+
 
 /* INLINE ELEMENTS */
 
