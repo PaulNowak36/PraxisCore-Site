@@ -678,7 +678,7 @@
     }
 
     .container-component.style-2.columns > .wrapper > .inner > * {
-        padding: calc(var(--gutters) * 0.5) 0 !important;
+        padding: 0 !important;
     }
 
     .container-component.style-2.columns > .wrapper > .inner > *:last-child {
