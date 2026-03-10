@@ -754,6 +754,40 @@
         min-height: auto;
     }
 
+}
+
+@media (max-width: 980px) and (min-width: 736px) {
+
+    /* Neutralise le reorder automatique */
+    #container04 .inner {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #container04 .inner > * {
+        order: unset !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    /* Force l'image en premier */
+    #container04 .inner > :nth-child(1) {
+        order: 0 !important;
+    }
+
+    /* Force le texte en second */
+    #container04 .inner > :nth-child(2) {
+        order: 1 !important;
+    }
+
+    /* Centre l'image */
+    #image04.image-component.style-2 > .frame {
+        width: 90vw;
+        margin: 0 auto;
+        display: block;
+    }
+
     /* On force le layout en 2 colonnes */
     #container11 .inner {
         display: flex;
@@ -775,9 +809,6 @@
         display: flex;
         justify-content: center;
     }
-
-
-
 }
 
 @media (max-width: 736px) {

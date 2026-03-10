@@ -94,8 +94,12 @@
 @media (max-width: 980px) {
     .image-component.style-3.full {
         display: none !important;
+
+
+
     }
 }
+
 
 @media (max-width: 736px) {
     
