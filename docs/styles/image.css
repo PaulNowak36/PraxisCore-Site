@@ -144,7 +144,21 @@
 
 @media (max-width: 480px) {
 
-    
+    .image-component.style-2 > .frame {
+        aspect-ratio: 16 / 9; /* ou autre ratio */
+        height: auto !important;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .image-component.style-2 > .frame > img {
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center;
+        width: 100% !important;
+    }
+
+
 
     .image-component.style-1 > .frame {
         width: 20rem;

@@ -743,7 +743,7 @@
     .container-component.style-2.columns > .wrapper > .inner > .full > .full:first-child:last-child > * {
         height: auto;
         position: relative;
-        width: auto;
+        width: 100%;
     }
 
     .container-component.style-2.columns > .wrapper > .inner > .full > .full:first-child:last-child.image img {
