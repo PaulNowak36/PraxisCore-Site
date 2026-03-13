@@ -322,10 +322,10 @@
 }
 
 
-@media (max-width: 1680px) {
+@media (max-width: 1199px) {
     #service, #contact, #references {
         height: auto;          /* ← laisse le contenu décider */
-        max-height: 50vh;
+        max-height: 80vh;
     }
 }
 
