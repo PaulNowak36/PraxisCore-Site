@@ -321,6 +321,11 @@
     padding-left: 1rem;
 }
 
+#references .modal-text {
+  text-align: justify;
+  hyphens: auto; /* optionnel mais fortement recommandé */
+}
+
 
 @media (max-width: 1199px) {
     #service, #contact, #references {
